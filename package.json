@@ -1,8 +1,8 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "homepage": "/",
   "private": true,
-  "homepage": "http://moshazly1.github.io/IceCreamMixat",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
