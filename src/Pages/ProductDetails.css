@@ -1,0 +1,55 @@
+.product-details-page {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding-bottom: 100px;
+  overflow-x: visible;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+  .product-details-page {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding-bottom: 100px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .product-details-page {
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding-bottom: 100px;
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1024px) {
+  .product-details-page {
+    width: 100%;
+    max-width: 768px;
+    height: auto;
+    min-height: 100vh;
+    max-height: none;
+    overflow: visible;
+    padding-bottom: 110px;
+  }
+}

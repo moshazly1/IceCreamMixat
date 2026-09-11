@@ -1,0 +1,292 @@
+.contents {
+  background-color: var(--nat-100);
+  width: calc(100% - 270px);
+  border-radius: 6px;
+}
+.custom-brand-btn-dhash {
+  background-color: var(--brand-200);
+  border-color: var(--brand-200);
+  color: white;
+  padding: 5px 30px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  margin-left: 30px;
+  box-shadow: 0 3px 0px rgb(3, 42, 61);
+}
+
+.custom-brand-btn-dhash:hover {
+  background-color: var(--brand-300);
+  border-color: var(--brand-300);
+  color: white;
+}
+.custom-brand-Edite {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.custom-brand-Edite:hover {
+  background-color: rgba(255, 165, 0, 0.2);
+}
+
+.custom-brand-Delete {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: red;
+  transition: background-color 0.3s ease;
+}
+.custom-brand-Delete:hover {
+  background-color: rgba(255, 0, 0, 0.15);
+  color: darkred;
+}
+
+.custom-brand-Show {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #007bff;
+  transition: background-color 0.3s ease;
+}
+
+.custom-brand-Show:hover {
+  background-color: rgba(0, 123, 255, 0.2);
+}
+
+.clients-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 120px;
+  width: 100%;
+}
+
+.custom-pagination .page-link {
+  color: var(--brand-200);
+  border: 1px solid var(--brand-200);
+  transition: all 0.3s ease;
+}
+
+.custom-pagination .page-link:hover {
+  background-color: var(--brand-200);
+  color: white;
+  border-color: var(--brand-200);
+}
+
+.custom-pagination .page-item.active .page-link {
+  background-color: var(--brand-200);
+  border-color: var(--brand-200);
+  color: white;
+}
+
+.form-check-input:checked {
+  background-color: var(--brand-200);
+  border-color: var(--brand-200);
+}
+.form-check-input {
+  width: 25px;
+  height: 25px;
+}
+
+.custom-radio input[type="radio"]:checked {
+  accent-color: var(--brand-200);
+}
+
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.custom-modal-content {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  animation: modalFadeIn 0.3s ease-in-out;
+}
+
+.custom-modal-content h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-modal-content p {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.custom-modal-content .btn {
+  min-width: 120px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  padding: 5px;
+}
+
+.custom-modal-content .btn:hover {
+  transform: scale(1.05);
+  background-color: red;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cardclints {
+  width: calc(100% - 270px);
+  border-radius: 6px;
+}
+.main-content {
+  margin-left: 270px;
+  padding: 20px;
+}
+
+.pulse-circle {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.status-circle {
+  width: 26px;
+  height: 26px;
+  margin: auto;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.inner-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.pulse {
+  animation: pulseAnim 1.2s infinite;
+}
+
+@keyframes pulseAnim {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.contents,
+.cardclints,
+.main-content {
+  width: calc(100% - 270px);
+
+  background-color: var(--nat-100);
+  border-radius: 6px;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .contents,
+  .cardclints,
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* ===== Custom Small Table Style ===== */
+.table-sm-custom th,
+.table-sm-custom td {
+  padding: 8px 10px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .table-sm-custom th,
+  .table-sm-custom td {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}
+
+.table-responsive {
+  max-width: 95%;
+  margin: auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* عرض أعمدة محددة */
+.table-sm-custom th:nth-child(2),
+.table-sm-custom td:nth-child(2) {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-sm-custom th:nth-child(3),
+.table-sm-custom td:nth-child(3) {
+  max-width: 120px;
+}
+ 
+  
+
+
+
+
+

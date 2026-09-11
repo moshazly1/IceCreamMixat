@@ -1,0 +1,278 @@
+.dashboard-header {
+  width: 100%;
+  height: 90px;
+
+  flex-shrink: 0;
+
+  background-color: #ffffff;
+
+  border-bottom: 1px solid #dedede;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  position: relative;
+
+  z-index: 1100;
+}
+
+/* ================================================= */
+/* NAVBAR */
+/* ================================================= */
+
+.dashboard-navbar {
+  width: 100%;
+  height: 90px;
+
+  padding: 0 !important;
+
+  background-color: #ffffff !important;
+
+  position: relative !important;
+}
+
+/* ================================================= */
+/* CONTAINER */
+/* ================================================= */
+
+.dashboard-header-container {
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 34px !important;
+}
+
+/* ================================================= */
+/* LEFT */
+/* ================================================= */
+
+.dashboard-header-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+/* ================================================= */
+/* STORE NAME */
+/* ================================================= */
+
+.dashboard-header-brand {
+  display: flex;
+
+  align-items: center;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  text-decoration: none;
+}
+
+.dashboard-header-store-name {
+  color: var(--color-alt, #7b5036);
+
+  font-size: 23px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+/* ================================================= */
+/* MOBILE MENU */
+/* ================================================= */
+
+.dashboard-header-menu {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background-color: var(--color-primary, #e5915d);
+
+  color: #ffffff;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dashboard-header-menu:hover {
+  background-color: var(--color-alt, #7b5036);
+
+  transform: translateY(-1px);
+}
+
+/* ================================================= */
+/* USER */
+/* ================================================= */
+
+.dashboard-user {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.dashboard-user-avatar {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background-color: var(--color-primary-transparent, #fac59b);
+
+  color: var(--color-alt, #7b5036);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  border: 1px solid rgba(123, 80, 54, 0.12);
+}
+
+.dashboard-user-avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.dashboard-user-info {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  min-width: 145px;
+}
+
+.dashboard-user-name {
+  color: var(--color-nat-500, #212121);
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+.dashboard-user-role {
+  margin-top: 4px;
+
+  color: var(--color-nat-400, #424242);
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  text-transform: lowercase;
+}
+
+/* ================================================= */
+/* TABLET */
+/* ================================================= */
+
+@media (max-width: 991px) {
+  .dashboard-header,
+  .dashboard-navbar {
+    height: 76px;
+  }
+
+  .dashboard-header-container {
+    padding: 0 20px !important;
+  }
+
+  .dashboard-header-menu {
+    display: flex;
+  }
+
+  .dashboard-header-store-name {
+    font-size: 20px;
+  }
+
+  .dashboard-user-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .dashboard-user-name {
+    font-size: 14px;
+  }
+
+  .dashboard-user-role {
+    font-size: 12px;
+  }
+}
+
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
+
+@media (max-width: 575px) {
+  .dashboard-header-container {
+    padding: 0 16px !important;
+  }
+
+  .dashboard-header-left {
+    gap: 12px;
+  }
+
+  .dashboard-header-menu {
+    width: 40px;
+    height: 40px;
+
+    font-size: 17px;
+  }
+
+  .dashboard-header-store-name {
+    font-size: 18px;
+  }
+
+  .dashboard-user-info {
+    display: none;
+  }
+
+  .dashboard-user-avatar {
+    width: 40px;
+    height: 40px;
+  }
+}

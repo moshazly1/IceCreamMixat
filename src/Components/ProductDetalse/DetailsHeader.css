@@ -1,0 +1,22 @@
+.details-header {
+  padding: 1rem 0rem;
+}
+.back-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-alt);
+  color: var(--color-nat-100);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.details-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #333;
+}

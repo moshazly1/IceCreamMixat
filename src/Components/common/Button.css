@@ -1,0 +1,16 @@
+.app-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 2rem;
+  font-weight: 600;
+  transition: filter 0.2s ease;
+}
+
+.app-btn-primary {
+  background-color: var(--color-alt);
+  color: var(--color-nat-100);
+}
+
+.app-btn-primary:hover {
+  filter: brightness(0.9);
+}

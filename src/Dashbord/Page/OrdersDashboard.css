@@ -1,0 +1,804 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.orders-dashboard-page {
+  width: 100%;
+  min-height: calc(100vh - 90px);
+
+  display: grid;
+  grid-template-columns: 165px minmax(0, 1fr) 180px;
+  gap: 10px;
+
+  padding: 14px;
+  box-sizing: border-box;
+
+  background: var(--color-nat-300, #eeeeee);
+}
+
+/* =========================================================
+   LEFT QUEUE
+========================================================= */
+
+.orders-dashboard-left {
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+
+  overflow: hidden;
+}
+
+.orders-queue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  padding: 10px 8px;
+}
+
+.orders-queue-item {
+  width: 100%;
+  min-height: 33px;
+
+  padding: 0 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  border: 1px solid #f1645c;
+  border-radius: 4px;
+
+  background: #fff;
+
+  color: #222;
+
+  cursor: pointer;
+  font-family: inherit;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+
+  transition: 0.2s ease;
+}
+
+.orders-queue-item:hover {
+  transform: translateY(-1px);
+}
+
+.orders-queue-item strong {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.orders-queue-item > span:not(.orders-not-paid) {
+  color: #444;
+  font-size: 7px;
+  white-space: nowrap;
+}
+
+.orders-queue-icon {
+  width: 12px;
+  height: 12px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #4caf50;
+  color: #fff;
+
+  font-size: 6px;
+}
+
+.orders-not-paid {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+
+  margin-left: auto;
+
+  color: #ef3e3e !important;
+  font-size: 6px !important;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.orders-not-paid span {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #ef3e3e;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.orders-dashboard-main {
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
+
+  padding: 20px 14px 14px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.orders-dashboard-heading {
+  min-height: 55px;
+
+  padding: 0 2px 16px;
+  margin-bottom: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.orders-dashboard-heading h1 {
+  margin: 0;
+
+  color: #222;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.orders-dashboard-time {
+  color: #222;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.orders-main-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 7px;
+}
+
+/* =========================================================
+   ORDER CARD
+========================================================= */
+
+.dashboard-order-card {
+  min-width: 0;
+  min-height: 265px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 2px solid var(--color-primary, #e5915d);
+  border-radius: 7px;
+
+  background: #fff;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   ORDER CARD HEADER
+========================================================= */
+
+.dashboard-order-card-header {
+  min-height: 40px;
+
+  padding: 0 11px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--color-primary, #e5915d);
+  color: #fff;
+}
+
+.dashboard-order-card-header strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dashboard-order-card-header span {
+  font-size: 9px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   ORDER CARD BODY
+========================================================= */
+
+.dashboard-order-card-body {
+  flex: 1;
+
+  padding: 13px 9px 6px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================================
+   PRODUCT
+========================================================= */
+
+.dashboard-order-product {
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  border-bottom: 1px solid #efefef;
+}
+
+.dashboard-product-image {
+  width: 32px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 27px;
+}
+
+.dashboard-product-info {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+}
+
+.dashboard-product-info strong {
+  color: #222;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.dashboard-product-qty {
+  color: #222;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.dashboard-product-detail {
+  margin-top: 11px;
+
+  color: #333;
+
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.dashboard-product-detail strong {
+  font-weight: 700;
+}
+
+.dashboard-extras-title {
+  margin-top: 9px;
+}
+
+/* =========================================================
+   EXTRAS
+========================================================= */
+
+.dashboard-extra-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-top: 7px;
+}
+
+.dashboard-extra-list span {
+  min-width: 28px;
+  height: 16px;
+
+  padding: 0 6px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  background: #fafafa;
+
+  color: #555;
+
+  font-size: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.dashboard-total {
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dashboard-total strong {
+  color: #222;
+
+  font-size: 10px;
+}
+
+.dashboard-total span {
+  color: #555;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.dashboard-order-card-footer {
+  min-height: 37px;
+
+  padding: 5px 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #fff;
+}
+
+.dashboard-preparing {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #4caf50;
+
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.preparing-dot {
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow:
+    0 0 0 1px #4caf50,
+    inset 0 0 0 2px #fff;
+
+  position: relative;
+}
+
+.preparing-dot::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 2px;
+
+  border-radius: 50%;
+
+  background: #4caf50;
+
+  animation: preparingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes preparingPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.8);
+    opacity: 0.55;
+  }
+}
+
+.dashboard-done-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #222;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.dashboard-done-btn svg {
+  width: 15px;
+  height: 15px;
+
+  padding: 2px;
+
+  border-radius: 50%;
+
+  background: #45b649;
+
+  color: #fff;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   RIGHT COOKING QUEUE
+========================================================= */
+
+.orders-dashboard-right {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  padding: 95px 10px 10px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   COOKING CARD
+========================================================= */
+
+.cooking-order-card {
+  width: 100%;
+
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  border: 1px solid #3f51b5;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.cooking-order-card:not(.active) {
+  min-height: 36px;
+}
+
+.cooking-order-header {
+  height: 35px;
+
+  padding: 0 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #3f51b5;
+  color: #fff;
+}
+
+.cooking-order-header strong {
+  font-size: 12px;
+}
+
+.cooking-order-header span {
+  font-size: 8px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   EXPANDED COOKING ORDER
+========================================================= */
+
+.cooking-order-expanded {
+  padding: 9px;
+}
+
+.cooking-product-row {
+  min-height: 45px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  border-bottom: 1px solid #eee;
+}
+
+.cooking-product-icon {
+  width: 30px;
+  font-size: 24px;
+}
+
+.cooking-product-row strong {
+  flex: 1;
+
+  color: #222;
+
+  font-size: 9px;
+}
+
+.cooking-product-row > span {
+  color: #222;
+
+  font-size: 8px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.cooking-order-actions {
+  min-height: 35px;
+
+  margin-top: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.paid-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #3f51b5;
+
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.paid-dot {
+  width: 13px;
+  height: 13px;
+
+  border: 1px solid #3f51b5;
+
+  border-radius: 50%;
+
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.paid-dot::after {
+  content: "";
+
+  display: block;
+
+  width: 7px;
+  height: 7px;
+
+  margin: 2px;
+
+  border-radius: 50%;
+
+  background: #3f51b5;
+}
+
+.start-cooking-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #222;
+
+  font-family: inherit;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.start-cooking-btn svg {
+  width: 15px;
+  height: 15px;
+
+  padding: 3px;
+
+  border-radius: 50%;
+
+  background: #3f51b5;
+  color: #fff;
+
+  box-sizing: border-box;
+}
+
+.start-cooking-btn.started {
+  color: #4caf50;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .orders-dashboard-page {
+    grid-template-columns: 140px minmax(0, 1fr);
+  }
+
+  .orders-dashboard-right {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    padding: 0;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .orders-dashboard-page {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+  }
+
+  .orders-dashboard-left {
+    width: 100%;
+  }
+
+  .orders-queue-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .orders-dashboard-main {
+    padding: 15px 10px;
+  }
+
+  .orders-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .orders-dashboard-right {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .orders-dashboard-heading h1 {
+    font-size: 16px;
+  }
+
+  .orders-dashboard-time {
+    font-size: 12px;
+  }
+
+  .orders-dashboard-right {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.dashboard-product-image {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+  min-width: 42px;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  font-size: 27px;
+}
+
+.dashboard-product-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+/* =========================================================
+   QUEUED PRODUCT IMAGE
+========================================================= */
+
+.cooking-product-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+  min-width: 42px;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  font-size: 24px;
+}
+
+.cooking-product-icon img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+}

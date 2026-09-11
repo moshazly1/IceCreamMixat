@@ -1,0 +1,538 @@
+.extras-page {
+  width: 100%;
+
+  min-height: calc(100vh - 155px);
+
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+
+  border-radius: 10px;
+
+  padding: 32px;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* ================================================= */
+/* HEADER */
+/* ================================================= */
+
+.extras-header {
+  margin-bottom: 44px;
+}
+
+.extras-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+}
+
+.extras-title h1 {
+  margin: 0;
+
+  color: var(--color-nat-500, #172033);
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+/* ================================================= */
+/* ADD BUTTON */
+/* ================================================= */
+
+.extras-add-btn {
+  height: 48px;
+
+  min-width: 108px;
+
+  padding: 0 26px;
+
+  border: 2px solid var(--color-primary, #0c2445);
+
+  border-radius: 7px;
+
+  background-color: var(--color-alt, #805436);
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.extras-add-btn:hover {
+  background-color: var(--color-primary, #0c2445);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.extras-add-btn:active {
+  transform: translateY(0);
+}
+
+/* ================================================= */
+/* TABLE CONTAINER */
+/* ================================================= */
+
+.extras-table-container {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border-radius: 4px;
+}
+
+/* ================================================= */
+/* TABLE */
+/* ================================================= */
+
+.extras-table {
+  width: 100%;
+
+  min-width: 650px;
+
+  margin: 0 !important;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+}
+
+/* ================================================= */
+/* TABLE HEADER */
+/* ================================================= */
+
+.extras-table thead th {
+  background-color: #f7f7f7;
+
+  color: #202020;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  padding: 16px 14px;
+
+  white-space: nowrap;
+
+  border-top: 1px solid #e2e2e2 !important;
+
+  border-bottom: 1px solid #dddddd !important;
+}
+
+.extras-table thead th:first-child {
+  border-left: 1px solid #e2e2e2 !important;
+}
+
+.extras-table thead th:last-child {
+  border-right: 1px solid #e2e2e2 !important;
+}
+
+/* ================================================= */
+/* TABLE BODY */
+/* ================================================= */
+
+.extras-table tbody td {
+  padding: 18px 14px;
+
+  background-color: #ffffff;
+
+  color: #4d4d4d;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  vertical-align: middle;
+
+  border-bottom: 1px solid #ededed !important;
+
+  white-space: nowrap;
+}
+
+.extras-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.extras-table tbody tr:hover td {
+  background-color: #fafafa;
+}
+
+/* ================================================= */
+/* COLUMNS */
+/* ================================================= */
+
+.extra-name {
+  color: #303030 !important;
+
+  font-size: 15px !important;
+
+  font-weight: 500 !important;
+}
+
+.extra-price {
+  color: #555555 !important;
+
+  font-size: 15px !important;
+}
+
+.extras-center {
+  text-align: center;
+
+  vertical-align: middle;
+}
+
+.extras-tools-heading {
+  text-align: center;
+}
+
+/* ================================================= */
+/* STATUS INDICATOR */
+/* ================================================= */
+
+.extra-status-dot {
+  position: relative;
+
+  display: inline-flex;
+
+  width: 20px;
+
+  height: 20px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  vertical-align: middle;
+
+  border-radius: 50%;
+
+  background-color: #ffffff;
+
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 1px 4px rgba(0, 0, 0, 0.16);
+}
+
+.extra-status-dot::before {
+  content: "";
+
+  display: block;
+
+  width: 19px;
+
+  height: 19px;
+
+  border-radius: 50%;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* ================================================= */
+/* AVAILABLE */
+/* ================================================= */
+
+.extra-status-dot.is-available {
+  background-color: #ffffff;
+
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 1px 5px rgba(69, 182, 73, 0.18);
+}
+
+.extra-status-dot.is-available::before {
+  background-color: #45b649;
+
+  box-shadow: 0 0 6px rgba(69, 182, 73, 0.55);
+
+  animation: extraStatusGlow 1.8s ease-in-out infinite;
+}
+
+/* ================================================= */
+/* UNAVAILABLE */
+/* ================================================= */
+
+.extra-status-dot.is-unavailable {
+  background-color: #ffffff;
+
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 1px 5px rgba(239, 62, 62, 0.18);
+}
+
+.extra-status-dot.is-unavailable::before {
+  background-color: #ef3e3e;
+
+  box-shadow: 0 0 6px rgba(239, 62, 62, 0.45);
+
+  animation: extraStatusGlow 1.8s ease-in-out infinite;
+}
+
+/* ================================================= */
+/* STATUS ANIMATION */
+/* ================================================= */
+
+@keyframes extraStatusGlow {
+  0% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+/* ================================================= */
+/* TOOLS */
+/* ================================================= */
+
+.extras-tools {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.extra-tool-btn {
+  width: 36px;
+
+  height: 36px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background-color: transparent;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.extra-delete-btn {
+  color: #4b4b4b;
+}
+
+.extra-delete-btn:hover {
+  background-color: #fdecec;
+
+  color: #d93025;
+
+  transform: translateY(-1px);
+}
+
+.extra-edit-btn {
+  color: #4b4b4b;
+}
+
+.extra-edit-btn:hover {
+  background-color: #fff1e6;
+
+  color: var(--color-primary, #0c2445);
+
+  transform: translateY(-1px);
+}
+
+/* ================================================= */
+/* PAGINATION */
+/* ================================================= */
+
+.extras-pagination-wrapper {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top: 70px;
+}
+
+.extras-pagination {
+  margin: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+.extras-pagination .page-link {
+  width: 36px;
+
+  height: 36px;
+
+  padding: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #e3e7eb;
+
+  border-radius: 6px;
+
+  background-color: #ffffff;
+
+  color: #777777;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  box-shadow: none !important;
+}
+
+.extras-pagination .page-link:hover {
+  background-color: #f5f5f5;
+
+  color: #222222;
+}
+
+.extras-pagination .page-item.active .page-link {
+  background-color: var(--color-primary, #0c2445);
+
+  border-color: var(--color-primary, #0c2445);
+
+  color: #ffffff;
+
+  font-weight: 600;
+}
+
+.extras-pagination .page-item.disabled .page-link {
+  background-color: #f3f4f5;
+
+  color: #c0c0c0;
+
+  border-color: #e5e5e5;
+}
+
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
+
+@media (max-width: 991px) {
+  .extras-page {
+    padding: 26px;
+  }
+
+  .extras-title h1 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 767px) {
+  .extras-page {
+    padding: 18px;
+
+    min-height: auto;
+  }
+
+  .extras-header {
+    margin-bottom: 28px;
+  }
+
+  .extras-title {
+    gap: 16px;
+  }
+
+  .extras-title h1 {
+    font-size: 22px;
+  }
+
+  .extras-add-btn {
+    height: 42px;
+
+    min-width: 82px;
+
+    padding: 0 18px;
+
+    font-size: 14px;
+  }
+
+  .extras-table {
+    min-width: 600px;
+  }
+
+  .extras-table thead th,
+  .extras-table tbody td {
+    font-size: 14px;
+
+    padding: 13px 10px;
+  }
+
+  .extra-tool-btn {
+    width: 34px;
+
+    height: 34px;
+  }
+
+  .extra-status-dot {
+    width: 19px;
+
+    height: 19px;
+  }
+
+  .extra-status-dot::before {
+    width: 13px;
+
+    height: 13px;
+  }
+
+  .extras-pagination-wrapper {
+    margin-top: 45px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .extra-status-dot::before {
+    animation: none;
+  }
+}

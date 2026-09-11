@@ -1,0 +1,417 @@
+.basket-page {
+  min-height: 100vh;
+  background: var(--color-nat-100);
+  padding: 30px 20px 40px;
+}
+
+/* ================= HEADER ================= */
+
+.basket-header {
+  max-width: 900px;
+  margin: 0 auto 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.basket-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-alt);
+}
+
+.basket-back-btn {
+  position: absolute;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-alt);
+  color: var(--color-nat-100);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.basket-back-btn:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* ================= CONTENT ================= */
+
+.basket-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ================= PRODUCTS ================= */
+
+.basket-products {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.basket-product {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding: 18px;
+
+  background: white;
+
+  border: 1px solid var(--color-nat-300);
+  border-radius: 18px;
+
+  box-shadow: 0 4px 18px rgba(123, 80, 54, 0.08);
+}
+
+/* ================= IMAGE ================= */
+
+.basket-product-image {
+  width: 120px;
+  height: 120px;
+
+  flex-shrink: 0;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  background: var(--color-secondary);
+}
+
+.basket-product-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* ================= INFO ================= */
+
+.basket-product-info {
+  flex: 1;
+
+  padding-left: 20px;
+}
+
+.basket-product-info h3 {
+  margin: 0 0 7px;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  color: var(--color-alt);
+}
+
+.basket-flavor,
+.basket-extras {
+  margin: 3px 0;
+
+  font-size: 14px;
+
+  color: var(--color-alt-secondary);
+}
+
+.basket-price {
+  margin: 8px 0 12px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  color: var(--color-text-primary);
+}
+
+/* ================= QUANTITY ================= */
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.quantity-control button {
+  width: 34px;
+  height: 34px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--color-secondary);
+  color: var(--color-alt);
+
+  font-size: 22px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s ease;
+}
+
+.quantity-control button:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+.quantity-control button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.quantity-control span {
+  min-width: 25px;
+
+  text-align: center;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  color: var(--color-alt);
+}
+
+/* ================= REMOVE ================= */
+
+.remove-product {
+  position: absolute;
+
+  top: 12px;
+  right: 15px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 23px;
+
+  color: var(--color-alt-secondary);
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.remove-product:hover {
+  color: var(--color-red);
+}
+
+/* ================= PAYMENT SUMMARY ================= */
+
+.payment-summary {
+  margin-top: 35px;
+
+  padding: 25px;
+
+  background: var(--color-primary-transparent);
+
+  border-radius: 20px;
+
+  border: 1px solid var(--color-secondary);
+}
+
+.payment-summary h2 {
+  margin: 0 0 20px;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  color: var(--color-alt);
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 13px;
+
+  font-size: 15px;
+
+  color: var(--color-alt);
+}
+
+.summary-row div {
+  display: flex;
+  gap: 8px;
+}
+
+.summary-row small {
+  color: var(--color-alt-secondary);
+}
+
+.summary-divider {
+  height: 1px;
+
+  background: var(--color-secondary);
+
+  margin: 20px 0;
+}
+
+.total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 19px;
+  font-weight: 700;
+
+  color: var(--color-alt);
+}
+
+.total-row strong {
+  color: var(--color-primary);
+}
+
+/* ================= ACTIONS ================= */
+
+.basket-actions {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 25px;
+}
+
+.add-items-btn,
+.place-order-btn {
+  height: 52px;
+
+  border-radius: 14px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+/* خلي الـ flex للزرارين اللي تحت المنتجات فقط */
+.basket-actions .add-items-btn,
+.basket-actions .place-order-btn {
+  flex: 1;
+}
+
+/* ================= ADD ITEMS ================= */
+
+.add-items-btn {
+  border: 2px solid var(--color-primary);
+
+  background: white;
+
+  color: var(--color-primary);
+}
+
+.add-items-btn:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* ================= PLACE ORDER ================= */
+
+.place-order-btn {
+  border: 2px solid var(--color-alt);
+
+  background: var(--color-alt);
+
+  color: white;
+}
+
+.place-order-btn:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ================= EMPTY ================= */
+
+.empty-basket {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  text-align: center;
+}
+
+.empty-basket h2 {
+  margin: 0;
+
+  font-size: 24px;
+
+  color: var(--color-alt);
+}
+
+/* زر Add Items في حالة السلة الفاضية */
+.empty-basket .add-items-btn {
+  width: 150px;
+  height: 48px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+  .basket-page {
+    padding: 20px 15px 30px;
+  }
+
+  .basket-header {
+    margin-bottom: 25px;
+  }
+
+  .basket-header h1 {
+    font-size: 24px;
+  }
+
+  .basket-product {
+    padding: 12px;
+  }
+
+  .basket-product-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .basket-product-info {
+    padding-left: 12px;
+  }
+
+  .basket-product-info h3 {
+    font-size: 16px;
+  }
+
+  .basket-price {
+    font-size: 14px;
+  }
+
+  .quantity-control {
+    gap: 10px;
+  }
+
+  .quantity-control button {
+    width: 30px;
+    height: 30px;
+
+    font-size: 19px;
+  }
+
+  .basket-actions {
+    flex-direction: column;
+  }
+}

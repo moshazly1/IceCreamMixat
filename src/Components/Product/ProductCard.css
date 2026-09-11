@@ -1,0 +1,166 @@
+.product-card {
+  position: relative;
+
+  flex: 0 0 48%;
+  width: 48%;
+  min-width: 0;
+
+  height: 135px;
+
+  display: grid !important;
+  grid-template-columns: 42% 58%;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* =========================
+   Add Button
+========================= */
+
+.product-add-btn {
+  position: absolute;
+
+  top: 8px;
+  left: 2px;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+  border: none;
+
+  background-color: var(--color-alt);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.5rem;
+  line-height: 1;
+
+  z-index: 5;
+
+  padding: 0;
+}
+
+/* =========================
+   Product Info
+========================= */
+
+.product-info {
+  position: static;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 42px 2px 0 2px;
+
+  box-sizing: border-box;
+
+  z-index: 3;
+
+  overflow: hidden;
+}
+
+/* =========================
+   Price
+========================= */
+
+.product-price {
+  color: var(--color-alt);
+
+  font-weight: 700;
+
+  font-size: 0.78rem;
+
+  margin: 0 0 6px 0;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   Product Name
+========================= */
+
+.product-name {
+  color: #333;
+
+  font-weight: 600;
+
+  font-size: 0.78rem;
+
+  line-height: 1.25;
+
+  margin: 0;
+
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* =========================
+   Product Image
+========================= */
+
+.product-img {
+  position: static;
+
+  width: 100%;
+  height: 135px;
+
+  max-width: 120px;
+
+  object-fit: contain;
+
+  justify-self: end;
+
+  margin: 0;
+
+  z-index: 2;
+}
+
+/* =========================
+   Very Small Screens
+========================= */
+
+@media (max-width: 360px) {
+  .product-card {
+    grid-template-columns: 40% 60%;
+    height: 130px;
+  }
+
+  .product-info {
+    padding-top: 40px;
+  }
+
+  .product-price {
+    font-size: 0.72rem;
+  }
+
+  .product-name {
+    font-size: 0.74rem;
+  }
+
+  .product-img {
+    height: 130px;
+    max-width: 112px;
+  }
+
+  .product-add-btn {
+    width: 30px;
+    height: 30px;
+
+    top: 7px;
+    left: 2px;
+
+    font-size: 1.35rem;
+  }
+}

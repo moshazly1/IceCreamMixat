@@ -1,0 +1,58 @@
+.product-extras {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.extra-row {
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 8px;
+
+  border-bottom: 1px solid var(--color-alt);
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+.extra-name {
+  flex: 1;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.extra-price {
+  width: 80px;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-alt, #8b5a3c);
+  text-align: left;
+}
+.extra-checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+.extra-checkbox.checked {
+  background-color: #e8935b;
+  color: white;
+}
+.extra-checkbox i {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+}
