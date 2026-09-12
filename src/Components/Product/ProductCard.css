@@ -176,7 +176,7 @@
 
   z-index: 2;
 
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* =========================================================
@@ -184,13 +184,11 @@
 ========================================================= */
 
 .product-img {
-  display: block;
+  width: 115%;
+  height: 105%;
 
-  width: 100%;
-  height: 100%;
-
-  max-width: 145px;
-  max-height: 135px;
+  max-width: 160px;
+  max-height: 145px;
 
   object-fit: contain;
   object-position: center right;
