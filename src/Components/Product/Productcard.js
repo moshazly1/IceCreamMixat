@@ -9,21 +9,22 @@ export default function ProductCard({ id, image, price, name }) {
 
   return (
     <div className="product-card d-flex align-items-center justify-content-between">
-      <button
-        className="product-add-btn"
-        onClick={() => navigate(`/product/${id}`)}
-      >
-        <i className="bi bi-plus"></i>
-      </button>
+      <div className="product-data">
+        <button
+          className="product-add-btn"
+          onClick={() => navigate(`/product/${id}`)}
+        >
+          <i className="bi bi-plus"></i>
+        </button>
 
-      <div className="product-info">
-        <p className="product-price">
-          {currencyLoading ? "..." : `${convertPrice(price)} ${currency}`}
-        </p>
+        <div className="product-info">
+          <p className="product-price">
+            {currencyLoading ? "..." : `${convertPrice(price)} ${currency}`}
+          </p>
 
-        <p className="product-name">{name}</p>
+          <p className="product-name">{name}</p>
+        </div>
       </div>
-
       <img src={image} alt={name} className="product-img" />
     </div>
   );

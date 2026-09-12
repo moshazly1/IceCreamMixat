@@ -131,14 +131,16 @@
    Very Small Screens
 ========================= */
 
-@media (max-width: 360px) {
+@media (max-width: 350px) {
   .product-card {
-    grid-template-columns: 40% 60%;
-    height: 130px;
+    text-align: left;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
   }
 
   .product-info {
-    padding-top: 40px;
+    padding-top: 14px;
   }
 
   .product-price {
@@ -150,11 +152,11 @@
   }
 
   .product-img {
-    height: 130px;
-    max-width: 112px;
+    width: 100%;
   }
 
   .product-add-btn {
+    position: relative;
     width: 30px;
     height: 30px;
 
