@@ -1,4 +1,4 @@
-export const baseURL = "https://75cb-154-239-181-76.ngrok-free.app";
+export const baseURL = "https://riboku.pythonanywhere.com";
 export const GET_CATEGORY = "api/shop/categories/";
 export const GET_OFFERD = "api/shop/products/featured-offer/";
 export const GET_PRODUCT = "api/shop/categories";
