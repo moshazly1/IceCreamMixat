@@ -1,3 +1,7 @@
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
 .product-card {
   position: relative;
 
@@ -7,8 +11,7 @@
 
   height: 135px;
 
-  display: grid !important;
-  grid-template-columns: 42% 58%;
+  display: flex;
   align-items: center;
 
   padding: 0;
@@ -16,61 +19,99 @@
 
   box-sizing: border-box;
   overflow: hidden;
+
+  /* Gives the image and text a clean relationship */
+  isolation: isolate;
 }
 
-/* =========================
-   Add Button
-========================= */
+/* =========================================================
+   PRODUCT DATA
+========================================================= */
+
+.product-data {
+  position: relative;
+
+  width: 46%;
+  height: 100%;
+
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  z-index: 3;
+}
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
 
 .product-add-btn {
   position: absolute;
 
-  top: 8px;
-  left: 2px;
+  top: 7px;
+  left: 0;
 
-  width: 32px;
-  height: 32px;
+  width: 31px;
+  height: 31px;
 
-  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+
   border: none;
+  border-radius: 50%;
 
   background-color: var(--color-alt);
-  color: white;
+  color: #fff;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   line-height: 1;
+
+  cursor: pointer;
 
   z-index: 5;
 
-  padding: 0;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
 }
 
-/* =========================
-   Product Info
-========================= */
+.product-add-btn:hover {
+  transform: scale(1.06);
+}
+
+.product-add-btn:active {
+  transform: scale(0.95);
+}
+
+/* =========================================================
+   PRODUCT INFO
+========================================================= */
 
 .product-info {
-  position: static;
-
   width: 100%;
   min-width: 0;
 
-  padding: 42px 2px 0 2px;
+  padding: 34px 0 0 0;
 
   box-sizing: border-box;
 
-  z-index: 3;
+  overflow: visible;
 
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* =========================
-   Price
-========================= */
+/* =========================================================
+   PRICE
+========================================================= */
 
 .product-price {
   color: var(--color-alt);
@@ -78,18 +119,19 @@
   font-weight: 700;
 
   font-size: 0.78rem;
+  line-height: 1.2;
 
-  margin: 0 0 6px 0;
+  margin: 0 0 5px 0;
+  padding: 0;
 
   white-space: nowrap;
 
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
 }
 
-/* =========================
-   Product Name
-========================= */
+/* =========================================================
+   PRODUCT NAME
+========================================================= */
 
 .product-name {
   color: #333;
@@ -97,72 +139,154 @@
   font-weight: 600;
 
   font-size: 0.78rem;
-
   line-height: 1.25;
 
   margin: 0;
+  padding: 0;
 
-  overflow-wrap: break-word;
+  max-width: 100%;
+
+  /*
+    Allow the name to use multiple lines
+    instead of cutting it with ellipsis.
+  */
+  white-space: normal;
+
+  overflow-wrap: anywhere;
   word-break: normal;
 }
 
-/* =========================
-   Product Image
-========================= */
+/* =========================================================
+   IMAGE AREA
+========================================================= */
 
-.product-img {
-  position: static;
+.product-image-wrapper {
+  position: relative;
 
-  width: 100%;
-  height: 135px;
+  width: 54%;
+  height: 100%;
 
-  max-width: 120px;
+  min-width: 0;
 
-  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
-  justify-self: end;
-
-  margin: 0;
+  box-sizing: border-box;
 
   z-index: 2;
+
+  overflow: hidden;
 }
 
-/* =========================
-   Very Small Screens
-========================= */
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
 
-@media (max-width: 350px) {
+.product-img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 145px;
+  max-height: 135px;
+
+  object-fit: contain;
+  object-position: center right;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SMALL SCREENS
+========================================================= */
+
+@media (max-width: 400px) {
   .product-card {
-    text-align: left;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 100%;
+    height: 130px;
+  }
+
+  .product-data {
+    width: 47%;
+  }
+
+  .product-image-wrapper {
+    width: 53%;
   }
 
   .product-info {
-    padding-top: 14px;
+    padding-top: 32px;
   }
 
   .product-price {
-    font-size: 0.72rem;
-  }
-
-  .product-name {
     font-size: 0.74rem;
   }
 
+  .product-name {
+    font-size: 0.75rem;
+    line-height: 1.22;
+  }
+
   .product-img {
-    width: 100%;
+    max-width: 135px;
+    max-height: 130px;
   }
 
   .product-add-btn {
-    position: relative;
     width: 30px;
     height: 30px;
 
-    top: 7px;
-    left: 2px;
+    top: 6px;
 
     font-size: 1.35rem;
+  }
+}
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 350px) {
+  .product-card {
+    height: 125px;
+  }
+
+  .product-data {
+    width: 48%;
+  }
+
+  .product-image-wrapper {
+    width: 52%;
+  }
+
+  .product-info {
+    padding-top: 31px;
+  }
+
+  .product-price {
+    font-size: 0.7rem;
+  }
+
+  .product-name {
+    font-size: 0.72rem;
+    line-height: 1.2;
+  }
+
+  .product-img {
+    max-width: 125px;
+    max-height: 125px;
+  }
+
+  .product-add-btn {
+    width: 29px;
+    height: 29px;
+
+    top: 6px;
+
+    font-size: 1.3rem;
   }
 }

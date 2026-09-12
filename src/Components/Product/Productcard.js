@@ -8,11 +8,14 @@ export default function ProductCard({ id, image, price, name }) {
   const { currency, convertPrice, loading: currencyLoading } = useCurrency();
 
   return (
-    <div className="product-card d-flex align-items-center justify-content-between">
+    <div className="product-card">
+      {/* Product information */}
       <div className="product-data">
         <button
+          type="button"
           className="product-add-btn"
           onClick={() => navigate(`/product/${id}`)}
+          aria-label={`Add ${name}`}
         >
           <i className="bi bi-plus"></i>
         </button>
@@ -25,7 +28,11 @@ export default function ProductCard({ id, image, price, name }) {
           <p className="product-name">{name}</p>
         </div>
       </div>
-      <img src={image} alt={name} className="product-img" />
+
+      {/* Product image */}
+      <div className="product-image-wrapper">
+        <img src={image} alt={name} className="product-img" />
+      </div>
     </div>
   );
 }
