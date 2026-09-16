@@ -18,11 +18,6 @@ export default function useLogin() {
 
       const response = await dashboardAxiosInstance.post(LOGIN, payload);
 
-      console.log("========== LOGIN RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response Data:", response.data);
-      console.log("====================================");
-
       return response.data;
     } catch (err) {
       console.error("========== LOGIN ERROR ==========");

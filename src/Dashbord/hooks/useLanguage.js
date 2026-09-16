@@ -15,21 +15,7 @@ export default function useLanguage() {
       setLoading(true);
       setError(null);
 
-      console.log("========== LANGUAGES REQUEST ==========");
-      console.log("Method:", "GET");
-      console.log("URL:", GET_LANGUAGES);
-
       const response = await axiosInstance.get(GET_LANGUAGES);
-
-      console.log("========== LANGUAGES RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response:", response);
-      console.log("Response Data:", response.data);
-      console.log(
-        "Response Data JSON:",
-        JSON.stringify(response.data, null, 2),
-      );
-      console.log("========================================");
 
       const data = response.data?.data;
 

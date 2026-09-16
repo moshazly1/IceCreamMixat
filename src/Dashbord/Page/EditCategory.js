@@ -44,8 +44,6 @@ export default function EditCategory() {
     const fetchLanguages = async () => {
       try {
         const response = await getLanguages();
-
-        console.log("Languages Response:", response);
       } catch (err) {
         console.error("Languages Fetch Error:", err);
       }
@@ -63,14 +61,7 @@ export default function EditCategory() {
       try {
         const response = await getDashboardCategory(id);
 
-        console.log("========== EDIT CATEGORY DATA ==========");
-        console.log("Category ID:", id);
-        console.log("Category Data:", response);
-        console.log("========================================");
-
         const categoryData = response?.data || response;
-
-        console.log("Category Object:", categoryData);
 
         setCategory(categoryData);
 
@@ -110,10 +101,6 @@ export default function EditCategory() {
           setLanguage(activeLanguage.prefix);
           setName(activeLanguage.value);
         }
-
-        console.log("Active Language:", activeLanguage?.prefix);
-
-        console.log("Active Name:", activeLanguage?.value);
       } catch (err) {
         console.error("Edit Category Fetch Error:", err);
       }
@@ -166,14 +153,6 @@ export default function EditCategory() {
     const selectedName = getNameByLanguage(selectedLanguage);
 
     setName(selectedName);
-
-    console.log("========== LANGUAGE CHANGED ==========");
-
-    console.log("Selected Language:", selectedLanguage);
-
-    console.log("Selected Language Name:", selectedName);
-
-    console.log("=======================================");
   };
 
   // =========================
@@ -230,27 +209,11 @@ export default function EditCategory() {
       // DEBUG
       // =========================
 
-      console.log("========== EDIT CATEGORY ==========");
-
-      console.log("Category ID:", id);
-
-      console.log("Selected Language:", language);
-
-      console.log("Selected Name:", name);
-
-      for (const [key, value] of formData.entries()) {
-        console.log(key, value);
-      }
-
-      console.log("===================================");
-
       // =========================
       // API REQUEST
       // =========================
 
       const response = await editDashboardCategory(formData);
-
-      console.log("Edit Category Response:", response);
 
       // =========================
       // SUCCESS

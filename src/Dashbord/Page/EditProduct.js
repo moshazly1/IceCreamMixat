@@ -103,9 +103,6 @@ export default function EditProduct() {
   useEffect(() => {
     if (!product) return;
 
-    console.log("========== EDIT PRODUCT DATA ==========");
-    console.log("Product:", product);
-
     // =========================
     // NAME
     // =========================
@@ -333,14 +330,6 @@ export default function EditProduct() {
     const selectedName = getNameByLanguage(selectedLanguage);
 
     setName(selectedName);
-
-    console.log("========== NAME LANGUAGE CHANGED ==========");
-
-    console.log("Selected Language:", selectedLanguage);
-
-    console.log("Selected Name:", selectedName);
-
-    console.log("===========================================");
   };
 
   // =========================
@@ -355,14 +344,6 @@ export default function EditProduct() {
     const selectedDescription = getDescriptionByLanguage(selectedLanguage);
 
     setDescription(selectedDescription);
-
-    console.log("========== DESCRIPTION LANGUAGE CHANGED ==========");
-
-    console.log("Selected Language:", selectedLanguage);
-
-    console.log("Selected Description:", selectedDescription);
-
-    console.log("==================================================");
   };
 
   // =========================
@@ -480,36 +461,6 @@ export default function EditProduct() {
       // DEBUG
       // =========================
 
-      console.log("========== UPDATE PRODUCT DATA ==========");
-
-      console.log("Product ID:", id);
-
-      console.log("Name Language:", nameLanguage);
-
-      console.log("Name:", name);
-
-      console.log("Description Language:", descriptionLanguage);
-
-      console.log("Description:", description);
-
-      console.log("Category ID:", category);
-
-      console.log("Available:", available);
-
-      console.log("Offer:", offer);
-
-      console.log("Offer Percent:", offerPercent);
-
-      console.log("Flavors IDs:", flavorsIds);
-
-      console.log("Extras IDs:", extrasIds);
-
-      console.log("Name Values:", nameValues);
-
-      console.log("Description Values:", descriptionValues);
-
-      console.log("=========================================");
-
       // =========================
       // UPDATE PRODUCT
       // =========================
@@ -543,12 +494,6 @@ export default function EditProduct() {
 
         image,
       });
-
-      console.log("========== PRODUCT UPDATED ==========");
-
-      console.log("Update Response:", response);
-
-      console.log("====================================");
 
       navigate("/dashboard/products");
     } catch (err) {

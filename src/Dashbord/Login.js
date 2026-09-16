@@ -23,12 +23,6 @@ export default function Login() {
     try {
       const response = await login(email, password);
 
-      console.log("========== LOGIN SUCCESS ==========");
-      console.log("Message:", response?.Message);
-      console.log("User:", response?.user);
-      console.log("Has Access Token:", Boolean(response?.accessToken));
-      console.log("===================================");
-
       setLoginData(response?.user, response?.accessToken);
 
       navigate("/dashboard", {

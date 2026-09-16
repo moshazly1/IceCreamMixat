@@ -117,32 +117,9 @@ export default function useProductDashbord() {
       setLoading(true);
       setError(null);
 
-      console.log("========== SINGLE PRODUCT REQUEST ==========");
-
-      console.log("Method:", "GET");
-
-      console.log("URL:", `${GET_DASHBOARD_PRODUCT}${productId}/`);
-
-      console.log("Product ID:", productId);
-
-      console.log("============================================");
-
       const response = await dashboardAxiosInstance.get(
         `${GET_DASHBOARD_PRODUCT}${productId}/`,
       );
-
-      console.log("========== SINGLE PRODUCT RESPONSE ==========");
-
-      console.log("Status:", response.status);
-
-      console.log("Response Data:", response.data);
-
-      console.log(
-        "Response Data JSON:",
-        JSON.stringify(response.data, null, 2),
-      );
-
-      console.log("=============================================");
 
       const data = response.data?.data;
 
@@ -389,35 +366,10 @@ export default function useProductDashbord() {
         formData.append("image", image);
       }
 
-      console.log("========== EDIT PRODUCT REQUEST ==========");
-
-      console.log("Method:", "PUT");
-
-      console.log("URL:", EDIT_DASHBOARD_PRODUCT);
-
-      for (const [key, value] of formData.entries()) {
-        console.log(key, value instanceof File ? value.name : value);
-      }
-
-      console.log("==========================================");
-
       const response = await dashboardAxiosInstance.put(
         EDIT_DASHBOARD_PRODUCT,
         formData,
       );
-
-      console.log("========== EDIT PRODUCT RESPONSE ==========");
-
-      console.log("Status:", response.status);
-
-      console.log("Response Data:", response.data);
-
-      console.log(
-        "Response Data JSON:",
-        JSON.stringify(response.data, null, 2),
-      );
-
-      console.log("===========================================");
 
       return response.data;
     } catch (err) {

@@ -24,25 +24,12 @@ export default function Sidebar({ show, onClose }) {
 
   const handleLogout = async () => {
     try {
-      console.log("========== LOGOUT REQUEST ==========");
-
       const response = await dashboardAxiosInstance.post(LOGOUT);
-
-      console.log("Logout Status:", response.status);
-      console.log("Logout Response:", response.data);
-
-      console.log("====================================");
-
       clearAuth();
       onClose?.();
 
       navigate("/dashboard/login", { replace: true });
     } catch (err) {
-      console.error("========== LOGOUT ERROR ==========");
-      console.error("Status:", err?.response?.status);
-      console.error("Error Data:", err?.response?.data);
-      console.error("==================================");
-
       // Clear local authentication even if backend logout fails
       clearAuth();
       onClose?.();

@@ -25,11 +25,6 @@ const refreshInstance = axios.create({
 export const refreshAccessToken = async () => {
   const response = await refreshInstance.post(REFRESH_TOKEN);
 
-  console.log("========== REFRESH RESPONSE ==========");
-  console.log("Status:", response.status);
-  console.log("Data:", response.data);
-  console.log("=======================================");
-
   const newAccessToken =
     response.data?.accessToken || response.data?.access || response.data?.token;
 

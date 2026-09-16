@@ -30,27 +30,9 @@ export default function useExtraDashbord() {
       setLoading(true);
       setError(null);
 
-      console.log("========== EXTRAS REQUEST ==========");
-      console.log("Method:", "POST");
-      console.log("URL:", GET_DASHBOARD_EXTRAS);
-      console.log("Page:", page);
-      console.log("====================================");
-
       const response = await dashboardAxiosInstance.post(GET_DASHBOARD_EXTRAS, {
         page,
       });
-
-      console.log("========== EXTRAS RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response:", response);
-      console.log("Response Data:", response.data);
-
-      console.log(
-        "Response Data JSON:",
-        JSON.stringify(response.data, null, 2),
-      );
-
-      console.log("=====================================");
 
       const data = response.data?.data;
 
@@ -95,29 +77,9 @@ export default function useExtraDashbord() {
     try {
       setLoading(true);
       setError(null);
-
-      console.log("========== SINGLE EXTRA REQUEST ==========");
-      console.log("Method:", "GET");
-      console.log("URL:", `${GET_DASHBOARD_EXTRA}${extraId}/`);
-      console.log("Extra ID:", extraId);
-      console.log("===========================================");
-
       const response = await dashboardAxiosInstance.get(
         `${GET_DASHBOARD_EXTRA}${extraId}/`,
       );
-
-      console.log("========== SINGLE EXTRA RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response:", response);
-      console.log("Response Data:", response.data);
-
-      console.log(
-        "Response Data JSON:",
-        JSON.stringify(response.data, null, 2),
-      );
-
-      console.log("============================================");
-
       const data = response.data?.data;
 
       setExtra(data || null);
@@ -169,34 +131,10 @@ export default function useExtraDashbord() {
 
       formData.append("available", available ? "True" : "False");
 
-      console.log("========== CREATE EXTRA REQUEST ==========");
-      console.log("Method:", "POST");
-      console.log("URL:", CREATE_DASHBOARD_EXTRA);
-
-      console.log("FormData:");
-
-      for (const [key, value] of formData.entries()) {
-        console.log(key, value);
-      }
-
-      console.log("==========================================");
-
       const response = await dashboardAxiosInstance.post(
         CREATE_DASHBOARD_EXTRA,
         formData,
       );
-
-      console.log("========== CREATE EXTRA RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response:", response);
-      console.log("Response Data:", response.data);
-
-      console.log(
-        "Response Data JSON:",
-        JSON.stringify(response.data, null, 2),
-      );
-
-      console.log("===========================================");
 
       return response.data;
     } catch (err) {
@@ -223,13 +161,6 @@ export default function useExtraDashbord() {
     try {
       setLoading(true);
       setError(null);
-
-      console.log("========== DELETE EXTRA REQUEST ==========");
-      console.log("Method:", "DELETE");
-      console.log("URL:", DELETE_DASHBOARD_EXTRAS);
-      console.log("IDs:", ids);
-      console.log("==========================================");
-
       const response = await dashboardAxiosInstance.delete(
         DELETE_DASHBOARD_EXTRAS,
         {
@@ -238,18 +169,6 @@ export default function useExtraDashbord() {
           },
         },
       );
-
-      console.log("========== DELETE EXTRA RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response:", response);
-      console.log("Response Data:", response.data);
-
-      console.log(
-        "Response Data JSON:",
-        JSON.stringify(response.data, null, 2),
-      );
-
-      console.log("===========================================");
 
       return response.data;
     } catch (err) {
@@ -316,34 +235,10 @@ export default function useExtraDashbord() {
 
       formData.append("available", available ? "True" : "False");
 
-      console.log("========== EDIT EXTRA REQUEST ==========");
-      console.log("Method:", "PUT");
-      console.log("URL:", EDIT_DASHBOARD_EXTRA);
-
-      console.log("FormData:");
-
-      for (const [key, value] of formData.entries()) {
-        console.log(key, value);
-      }
-
-      console.log("========================================");
-
       const response = await dashboardAxiosInstance.put(
         EDIT_DASHBOARD_EXTRA,
         formData,
       );
-
-      console.log("========== EDIT EXTRA RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response:", response);
-      console.log("Response Data:", response.data);
-
-      console.log(
-        "Response Data JSON:",
-        JSON.stringify(response.data, null, 2),
-      );
-
-      console.log("=========================================");
 
       return response.data;
     } catch (err) {

@@ -22,14 +22,6 @@ export default function DashboardHome() {
     const fetchAnalytics = async () => {
       try {
         const response = await getDashboardAnalytics();
-
-        console.log("========== DASHBOARD ANALYTICS FULL RESPONSE ==========");
-
-        console.log("Response:", response);
-
-        console.log("Response JSON:", JSON.stringify(response, null, 2));
-
-        console.log("========================================================");
       } catch (err) {
         console.error("Failed to fetch dashboard analytics:", err);
       }

@@ -57,14 +57,12 @@ export default function AddReport() {
     fetchClients();
   }, []);
 
-  console.log(Idclient);
-
   useEffect(() => {
     async function featchProjectName() {
       if (Idclient) {
         try {
           const res = await axios.get(
-            `${baseURL}/${ALLPROJECTNAMEOFCLIENT}${Idclient}/`
+            `${baseURL}/${ALLPROJECTNAMEOFCLIENT}${Idclient}/`,
           );
           setAllProjectOfClient(res.data.data);
         } catch (err) {
@@ -83,7 +81,7 @@ export default function AddReport() {
         save: saveDraft,
       });
 
-toast.success("Saved successfully");
+      toast.success("Saved successfully");
 
       setData({
         client: "",

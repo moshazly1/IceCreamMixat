@@ -71,10 +71,6 @@ export default function AddFlavor() {
           break;
       }
 
-      console.log("========== CREATE FLAVOR DATA ==========");
-      console.log(flavorData);
-      console.log("========================================");
-
       await createDashboardFlavor(flavorData);
 
       navigate("/dashboard/flavors");

@@ -30,8 +30,6 @@ export default function useCreateOrder() {
       setLoading(true);
       setError(null);
 
-      console.log("Create Order Payload:", payload);
-
       const response = await axiosInstance.post(CREATE_ORDER, payload);
 
       return response.data;

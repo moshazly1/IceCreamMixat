@@ -64,13 +64,6 @@ export default function EditFlavor() {
 
   useEffect(() => {
     if (!flavor) return;
-
-    console.log("========== FILL EDIT FLAVOR ==========");
-
-    console.log("Flavor Data:", flavor);
-
-    console.log("======================================");
-
     setNameEn(flavor.nameEn ?? "");
     setNameRu(flavor.nameRu ?? "");
     setNameTr(flavor.nameTr ?? "");
@@ -167,37 +160,25 @@ export default function EditFlavor() {
 
     setLanguage(selectedLanguage);
 
-    console.log("========== FLAVOR LANGUAGE CHANGED ==========");
-
-    console.log("Selected Language:", selectedLanguage);
-
     switch (selectedLanguage) {
       case "en":
-        console.log("Selected Name:", nameEn);
         break;
 
       case "ru":
-        console.log("Selected Name:", nameRu);
         break;
 
       case "tr":
-        console.log("Selected Name:", nameTr);
         break;
 
       case "pl":
-        console.log("Selected Name:", namePl);
         break;
 
       case "it":
-        console.log("Selected Name:", nameIt);
         break;
 
       default:
-        console.log("Selected Name:", "");
         break;
     }
-
-    console.log("=============================================");
   };
 
   // =========================
@@ -226,12 +207,6 @@ export default function EditFlavor() {
         // Only send a file if user selected a new one
         image: image || null,
       };
-
-      console.log("========== EDIT FLAVOR DATA ==========");
-
-      console.log(flavorData);
-
-      console.log("======================================");
 
       await editDashboardFlavor(flavorData);
 

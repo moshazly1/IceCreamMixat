@@ -40,8 +40,6 @@ export default function AddCategory() {
     const fetchLanguages = async () => {
       try {
         const response = await getLanguages();
-
-        console.log("Languages Response:", response);
       } catch (err) {
         console.error("Languages Fetch Error:", err);
       }
@@ -94,21 +92,11 @@ export default function AddCategory() {
       // DEBUG
       // =========================
 
-      console.log("========== CREATE CATEGORY ==========");
-
-      for (const [key, value] of formData.entries()) {
-        console.log(key, value);
-      }
-
-      console.log("=====================================");
-
       // =========================
       // API REQUEST
       // =========================
 
       const response = await createDashboardCategory(formData);
-
-      console.log("Create Category Response:", response);
 
       // =========================
       // SUCCESS

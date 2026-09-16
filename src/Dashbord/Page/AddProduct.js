@@ -224,18 +224,6 @@ export default function AddProduct() {
       // DEBUG
       // =========================
 
-      console.log("========== SELECTED PRODUCT ITEMS ==========");
-
-      console.log("Flavors:", selectedFlavors);
-
-      console.log("Flavors IDs:", flavorsIds);
-
-      console.log("Extras:", selectedExtras);
-
-      console.log("Extras IDs:", extrasIds);
-
-      console.log("============================================");
-
       // =========================
       // CREATE PRODUCT
       // =========================
@@ -268,12 +256,6 @@ export default function AddProduct() {
 
         image,
       });
-
-      console.log("========== PRODUCT CREATED ==========");
-
-      console.log("Create Product Response:", response);
-
-      console.log("=====================================");
 
       navigate("/dashboard/products");
     } catch (err) {

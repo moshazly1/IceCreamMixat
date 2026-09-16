@@ -35,8 +35,6 @@ export default function Categories() {
     try {
       const response = await getDashboardCategories(page);
 
-      console.log("Categories Page Response:", response);
-
       setTotalPages(Number(response?.totalPages ?? 1));
     } catch (err) {
       console.error("Categories Fetch Error:", err);
@@ -53,11 +51,7 @@ export default function Categories() {
 
   const handleDeleteClick = async (id) => {
     try {
-      console.log("Delete category ID:", id);
-
       const response = await deleteDashboardCategories([id]);
-
-      console.log("Delete Category Response:", response);
 
       // بعد نجاح الحذف نعيد جلب البيانات
       await fetchCategories(currentPage);
@@ -71,8 +65,6 @@ export default function Categories() {
   // =========================
 
   const handleEditClick = (id) => {
-    console.log("Edit category ID:", id);
-
     navigate(`/dashboard/categories/edit/${id}`);
   };
 

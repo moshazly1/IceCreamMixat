@@ -13,11 +13,6 @@ export default function AuthProvider({ children }) {
   // =========================
 
   const setLoginData = useCallback((userData, token) => {
-    console.log("========== SET LOGIN DATA ==========");
-    console.log("User:", userData);
-    console.log("Has Access Token:", Boolean(token));
-    console.log("====================================");
-
     setUser(userData);
 
     setAccessToken(token);
@@ -36,8 +31,6 @@ export default function AuthProvider({ children }) {
   // =========================
 
   const clearAuth = useCallback(() => {
-    console.log("========== CLEAR AUTH ==========");
-
     setUser(null);
 
     clearAccessToken();
@@ -45,8 +38,6 @@ export default function AuthProvider({ children }) {
     localStorage.removeItem("dashboard_user");
 
     setIsAuthenticated(false);
-
-    console.log("================================");
   }, []);
 
   // =========================
@@ -56,16 +47,12 @@ export default function AuthProvider({ children }) {
   useEffect(() => {
     const checkAuthentication = async () => {
       try {
-        console.log("========== CHECK AUTH ==========");
-
         // Restore user information
         const savedUser = localStorage.getItem("dashboard_user");
 
         if (savedUser) {
           try {
             const parsedUser = JSON.parse(savedUser);
-
-            console.log("Restored User:", parsedUser);
 
             setUser(parsedUser);
           } catch (error) {
@@ -78,12 +65,8 @@ export default function AuthProvider({ children }) {
         // Restore access token using refresh cookie
         await refreshAccessToken();
 
-        console.log("Authentication restored successfully.");
-
         setIsAuthenticated(true);
       } catch (error) {
-        console.log("No active authentication session.");
-
         clearAuth();
       } finally {
         setLoading(false);

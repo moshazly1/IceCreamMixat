@@ -16,16 +16,6 @@ export default function useAnalytics() {
         GET_DASHBOARD_ANALYTICS,
       );
 
-      console.log("========== DASHBOARD ANALYTICS RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response:", response);
-      console.log("Response Data:", response.data);
-      console.log(
-        "Response Data JSON:",
-        JSON.stringify(response.data, null, 2),
-      );
-      console.log("=================================================");
-
       const data = response.data?.data ?? response.data;
 
       setAnalytics(data);

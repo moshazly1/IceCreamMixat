@@ -37,9 +37,6 @@ export default function useOrderDashboard() {
 
       const data = response.data;
 
-      console.log("ORDERS API RESPONSE:", response);
-      console.log("ORDERS API DATA:", data);
-
       const normalizedOrders = {
         unpaid_orders: Array.isArray(data?.unpaid_orders)
           ? data.unpaid_orders
@@ -55,8 +52,6 @@ export default function useOrderDashboard() {
       };
 
       setOrders(normalizedOrders);
-
-      console.log("NORMALIZED ORDERS:", normalizedOrders);
 
       return normalizedOrders;
     } catch (err) {
@@ -91,8 +86,6 @@ export default function useOrderDashboard() {
           status,
         },
       );
-
-      console.log("UPDATE ORDER STATUS RESPONSE:", response.data);
 
       return response.data;
     } catch (err) {

@@ -73,12 +73,6 @@ export default function AddExtra() {
           break;
       }
 
-      console.log("========== CREATE EXTRA DATA ==========");
-
-      console.log(extraData);
-
-      console.log("======================================");
-
       await createDashboardExtra(extraData);
 
       navigate("/dashboard/extras");

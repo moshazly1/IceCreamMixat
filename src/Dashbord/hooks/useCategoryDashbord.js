@@ -22,27 +22,12 @@ export default function useCategoryDashbord() {
       setLoading(true);
       setError(null);
 
-      console.log("========== CATEGORY REQUEST ==========");
-      console.log("Method: POST");
-      console.log("URL:", GET_DASHBOARD_CATEGORIES);
-      console.log("Page:", page);
-
       const response = await dashboardAxiosInstance.post(
         GET_DASHBOARD_CATEGORIES,
         {
           page,
         },
       );
-
-      console.log("========== CATEGORY RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response:", response);
-      console.log("Response Data:", response.data);
-      console.log(
-        "Response Data JSON:",
-        JSON.stringify(response.data, null, 2),
-      );
-      console.log("=======================================");
 
       const data = response.data?.data;
 
@@ -80,24 +65,9 @@ export default function useCategoryDashbord() {
       setLoading(true);
       setError(null);
 
-      console.log("========== SINGLE CATEGORY REQUEST ==========");
-      console.log("Method:", "GET");
-      console.log("URL:", `${GET_DASHBOARD_CATEGORY}${categoryId}/`);
-      console.log("Category ID:", categoryId);
-
       const response = await dashboardAxiosInstance.get(
         `${GET_DASHBOARD_CATEGORY}${categoryId}/`,
       );
-
-      console.log("========== SINGLE CATEGORY RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response:", response);
-      console.log("Response Data:", response.data);
-      console.log(
-        "Response Data JSON:",
-        JSON.stringify(response.data, null, 2),
-      );
-      console.log("==============================================");
 
       return response.data;
     } catch (err) {
@@ -123,11 +93,6 @@ export default function useCategoryDashbord() {
       setLoading(true);
       setError(null);
 
-      console.log("========== CATEGORY DELETE REQUEST ==========");
-      console.log("Method:", "DELETE");
-      console.log("URL:", DELETE_DASHBOARD_CATEGORIES);
-      console.log("IDs:", ids);
-
       const response = await dashboardAxiosInstance.delete(
         DELETE_DASHBOARD_CATEGORIES,
         {
@@ -136,12 +101,6 @@ export default function useCategoryDashbord() {
           },
         },
       );
-
-      console.log("========== CATEGORY DELETE RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response:", response);
-      console.log("Response Data:", response.data);
-      console.log("===============================================");
 
       return response.data;
     } catch (err) {
@@ -167,11 +126,6 @@ export default function useCategoryDashbord() {
       setLoading(true);
       setError(null);
 
-      console.log("========== CATEGORY CREATE REQUEST ==========");
-      console.log("Method:", "POST");
-      console.log("URL:", CREATE_DASHBOARD_CATEGORY);
-      console.log("FormData:", formData);
-
       const response = await dashboardAxiosInstance.post(
         CREATE_DASHBOARD_CATEGORY,
         formData,
@@ -181,12 +135,6 @@ export default function useCategoryDashbord() {
           },
         },
       );
-
-      console.log("========== CATEGORY CREATE RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response:", response);
-      console.log("Response Data:", response.data);
-      console.log("==============================================");
 
       return response.data;
     } catch (err) {
@@ -212,11 +160,6 @@ export default function useCategoryDashbord() {
       setLoading(true);
       setError(null);
 
-      console.log("========== CATEGORY EDIT REQUEST ==========");
-      console.log("Method:", "PUT");
-      console.log("URL:", EDIT_DASHBOARD_CATEGORY);
-      console.log("FormData:", formData);
-
       const response = await dashboardAxiosInstance.put(
         EDIT_DASHBOARD_CATEGORY,
         formData,
@@ -226,12 +169,6 @@ export default function useCategoryDashbord() {
           },
         },
       );
-
-      console.log("========== CATEGORY EDIT RESPONSE ==========");
-      console.log("Status:", response.status);
-      console.log("Response:", response);
-      console.log("Response Data:", response.data);
-      console.log("============================================");
 
       return response.data;
     } catch (err) {
