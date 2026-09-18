@@ -11,6 +11,11 @@ export default function Currency() {
 
   const currencies = [
     {
+      id: "EGP",
+      symbol: "£",
+      name: "currency_EGP",
+    },
+    {
       id: "USD",
       symbol: "$",
       name: "currency_USD",
@@ -19,11 +24,6 @@ export default function Currency() {
       id: "EUR",
       symbol: "€",
       name: "currency_EUR",
-    },
-    {
-      id: "EGP",
-      symbol: "£",
-      name: "currency_EGP",
     },
     {
       id: "GBP",

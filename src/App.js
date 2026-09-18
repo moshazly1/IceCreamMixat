@@ -30,6 +30,7 @@ import EditExtra from "./Dashbord/Page/EditExtra";
 // Auth
 import Login from "./Dashbord/Login";
 import ProtectedRoute from "./Auth/ProtectedRoute";
+import CompletedOrders from "./Dashbord/Page/CompletedOrders";
 
 export default function App() {
   return (
@@ -96,7 +97,7 @@ export default function App() {
           <Route path="extras/edit/:id" element={<EditExtra />} />
 
           {/* ================= Orders ================= */}
-
+          <Route path="completed-orders" element={<CompletedOrders />} />
           <Route path="orders" element={<OrdersDashboard />} />
         </Route>
       </Route>

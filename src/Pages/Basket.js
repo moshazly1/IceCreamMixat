@@ -1,16 +1,19 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import useCreateOrder from "../hooks/useCreateOrder";
-
-import "./Basket.css";
 import useOrderHistory from "../hooks/useOrederHistory";
 import useLanguage from "../hooks/useLanguage";
 import useCurrency from "../hooks/useCurrency";
+import PoliciesModal from "../Components/PoliciesModel/PoliciesModal.jsx";
+
+import "./Basket.css";
 
 export default function Basket() {
   const navigate = useNavigate();
-
   const { t } = useLanguage();
+
+  const [showRefundPolicy, setShowRefundPolicy] = useState(false);
 
   const { cartItems, removeFromCart, updateQuantity, clearCart } = useCart();
 
@@ -56,6 +59,15 @@ export default function Basket() {
 
         <h1>{t("basket")}</h1>
       </div>
+
+      {/* Refund Policy */}
+      <button
+        className="refund-policy-btn"
+        onClick={() => setShowRefundPolicy(true)}
+      >
+        <i className="bi bi-info-circle-fill"></i>
+        View Refund Policy
+      </button>
 
       {/* Basket Content */}
       <div className="basket-content">
@@ -192,6 +204,14 @@ export default function Basket() {
           </>
         )}
       </div>
+
+      {/* Refund Policy Modal */}
+      {showRefundPolicy && (
+        <PoliciesModal
+          requireAcceptance={false}
+          onClose={() => setShowRefundPolicy(false)}
+        />
+      )}
     </div>
   );
 }

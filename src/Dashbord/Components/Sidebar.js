@@ -45,6 +45,11 @@ export default function Sidebar({ show, onClose }) {
       label: "Orders",
     },
     {
+      to: "/dashboard/completed-orders",
+      icon: faClipboardList,
+      label: "Completed Orders",
+    },
+    {
       to: "/dashboard/categories",
       icon: faTableCellsLarge,
       label: "Categories",

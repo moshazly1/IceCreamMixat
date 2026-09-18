@@ -36,3 +36,4 @@ export const GET_DASHBOARD_ANALYTICS = "api/shop/dashboard/analytics/";
 export const LOGIN = "api/auth/login/";
 export const REFRESH_TOKEN = "api/auth/token/refresh/";
 export const LOGOUT = "api/auth/logout/";
+export const GET_COMPLETED_ORDERS = "api/shop/dashboard/completed-orders/";

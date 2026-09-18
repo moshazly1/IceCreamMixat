@@ -4,7 +4,7 @@ const CURRENCY_KEY = "selected_currency";
 
 export default function useCurrency() {
   const [currency, setCurrency] = useState(
-    localStorage.getItem(CURRENCY_KEY) || "USD",
+    localStorage.getItem(CURRENCY_KEY) || "EGP",
   );
 
   const [rate, setRate] = useState(1);
