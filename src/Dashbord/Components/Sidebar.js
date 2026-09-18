@@ -11,6 +11,7 @@ import {
   faIceCream,
   faTags,
   faRightFromBracket,
+  faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useAuth } from "../../Auth/AuthContext";
@@ -46,7 +47,7 @@ export default function Sidebar({ show, onClose }) {
     },
     {
       to: "/dashboard/completed-orders",
-      icon: faClipboardList,
+      icon: faUtensils,
       label: "Completed Orders",
     },
     {
