@@ -8,10 +8,12 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { CartProvider } from "./Context/CartContext";
 import { LanguageProvider } from "./Context/LanguageContext";
 import AuthProvider from "./Auth/AuthProvider";
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <CartProvider>
         <LanguageProvider>
           <AuthProvider>
