@@ -28,7 +28,7 @@ export default function Basket() {
     loading: currencyLoading,
   } = useCurrency();
 
-  // مجموع السلة بالدولار
+  // Cart total
   const totalAmount = cartItems.reduce(
     (total, item) => total + Number(item.totalPrice),
     0,
@@ -39,10 +39,13 @@ export default function Basket() {
       const result = await createOrder(cartItems, 1, currency, rate);
 
       addOrderId(result.data.order_id);
+
       clearCart();
 
       navigate("/receipt", {
-        state: { orderId: result.data.order_id },
+        state: {
+          orderId: result.data.order_id,
+        },
       });
     } catch (err) {
       alert(t("failedToPlaceOrder"));
@@ -51,7 +54,8 @@ export default function Basket() {
 
   return (
     <div className="basket-page">
-      {/* Header */}
+      {/* ================= HEADER ================= */}
+
       <div className="basket-header">
         <button className="basket-back-btn" onClick={() => navigate(-1)}>
           <i className="bi bi-arrow-left"></i>
@@ -60,16 +64,18 @@ export default function Basket() {
         <h1>{t("basket")}</h1>
       </div>
 
-      {/* Refund Policy */}
+      {/* ================= POLICIES ================= */}
+
       <button
         className="refund-policy-btn"
         onClick={() => setShowRefundPolicy(true)}
       >
         <i className="bi bi-info-circle-fill"></i>
-        View Refund Policy
+        {t("policiesTitle")}
       </button>
 
-      {/* Basket Content */}
+      {/* ================= BASKET CONTENT ================= */}
+
       <div className="basket-content">
         {cartItems.length === 0 ? (
           <div className="empty-basket">
@@ -81,30 +87,37 @@ export default function Basket() {
           </div>
         ) : (
           <>
-            {/* Products */}
+            {/* ================= PRODUCTS ================= */}
+
             <div className="basket-products">
               {cartItems.map((item) => (
                 <div className="basket-product" key={item.cartItemId}>
                   {/* Product Image */}
+
                   <div className="basket-product-image">
                     <img src={item.productImage} alt={item.productName} />
                   </div>
 
                   {/* Product Info */}
+
                   <div className="basket-product-info">
                     <h3>{item.productName}</h3>
 
                     {/* Flavor */}
+
                     {item.flavor && (
                       <p className="basket-flavor">{item.flavor.name}</p>
                     )}
 
                     {/* Extras */}
+
                     {item.extras?.length > 0 && (
                       <p className="basket-extras">
                         {item.extras.map((extra) => extra.name).join(", ")}
                       </p>
                     )}
+
+                    {/* Price */}
 
                     <p className="basket-price">
                       {currencyLoading
@@ -113,6 +126,7 @@ export default function Basket() {
                     </p>
 
                     {/* Quantity */}
+
                     <div className="quantity-control">
                       <button
                         onClick={() =>
@@ -136,6 +150,7 @@ export default function Basket() {
                   </div>
 
                   {/* Remove */}
+
                   <button
                     className="remove-product"
                     onClick={() => removeFromCart(item.cartItemId)}
@@ -146,7 +161,8 @@ export default function Basket() {
               ))}
             </div>
 
-            {/* Payment Summary */}
+            {/* ================= PAYMENT SUMMARY ================= */}
+
             <div className="payment-summary">
               <h2>{t("paymentSummary")}</h2>
 
@@ -154,6 +170,7 @@ export default function Basket() {
                 <div className="summary-row" key={item.cartItemId}>
                   <div>
                     <span>{item.productName}</span>
+
                     <small>× {item.quantity}</small>
                   </div>
 
@@ -178,13 +195,16 @@ export default function Basket() {
               </div>
             </div>
 
+            {/* ================= ERROR ================= */}
+
             {error && (
               <p className="text-danger text-center mt-2">
                 {t("failedToPlaceOrder")}
               </p>
             )}
 
-            {/* Bottom Buttons */}
+            {/* ================= ACTIONS ================= */}
+
             <div className="basket-actions">
               <button
                 className="add-items-btn"
@@ -205,7 +225,8 @@ export default function Basket() {
         )}
       </div>
 
-      {/* Refund Policy Modal */}
+      {/* ================= POLICIES MODAL ================= */}
+
       {showRefundPolicy && (
         <PoliciesModal
           requireAcceptance={false}

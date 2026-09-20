@@ -1,23 +1,45 @@
+/* =========================================================
+   MENU PAGE
+========================================================= */
+
 .menu-page {
   width: 100%;
   max-width: 420px;
   min-height: 100vh;
+
   margin: 0 auto;
 
   display: flex;
   flex-direction: column;
+
+  background-color: #ffffff;
+
+  overflow-x: hidden;
 }
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
 
 .section-title {
   color: var(--color-alt);
+
   font-weight: 700;
+
   font-size: 1.5rem;
+
   margin: 1.5rem 0 1rem 0;
 }
 
+/* =========================================================
+   PRODUCTS SCROLL
+========================================================= */
+
 .products-scroll {
   overflow-x: auto;
+
   padding-bottom: 1rem;
+
   scrollbar-width: none;
 }
 
@@ -25,134 +47,117 @@
   display: none;
 }
 
-.bottom-nav {
-  position: static;
-
-  width: 100%;
-  height: 65px;
-
-  margin-top: auto;
-
-  flex-shrink: 0;
-
-  background-color: var(--color-secondary, #e8a87c);
-
-  border-radius: 25px 25px 0 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 2rem;
-}
-
-.nav-icon-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.3rem;
-}
-
-.nav-cart-wrapper {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  background-color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -30px;
-}
-
-.nav-cart-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: var(--color-alt);
-  color: white;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-}
-.nav-icon-circle {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: rgba(var(--color-primary-rgb, 232, 147, 91), 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.pagination-dots {
-  cursor: pointer;
-
-  margin-bottom: 1rem; /* مسافة واضحة قبل الفوتر */
-  position: relative;
-  z-index: 5; /* تتأكد إنها فوق أي عنصر تاني ممكن يغطيها */
-}
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: var(--color-secondary, #f2b896);
-  display: inline-block;
-  transition: background-color 0.2s ease;
-}
-
-.dot.active {
-  background-color: var(--color-alt, #8b5a3c);
-}
+/* =========================================================
+   CAROUSEL
+========================================================= */
 
 .carousel-viewport {
-  overflow: hidden;
   width: 100%;
+
+  overflow: hidden;
+
+  position: relative;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 1s ease-in-out;
+
+  width: 100%;
+
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .carousel-page {
   flex: 0 0 100%;
+
   min-width: 100%;
+
+  width: 100%;
+
+  display: flex;
+
+  gap: 1rem;
+
+  align-items: stretch;
 }
 
+/* =========================================================
+   PAGINATION
+========================================================= */
+
 .pagination-dots {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
   cursor: pointer;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+
+  margin: 1.5rem 0 1.5rem;
+
+  position: relative;
+
+  z-index: 5;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
+
   border-radius: 50%;
+
   background-color: var(--color-secondary, #f2b896);
+
   display: inline-block;
-  transition: background-color 0.2s ease;
+
+  transition:
+    width 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .dot.active {
+  width: 24px;
+
+  border-radius: 20px;
+
   background-color: var(--color-alt, #8b5a3c);
 }
+
+.dot:hover {
+  transform: scale(1.08);
+}
+
+/* =========================================================
+   EMPTY PRODUCTS STATE
+========================================================= */
+
 .products-empty-state {
   width: 100%;
+
   min-height: 180px;
 
   margin: 1rem 0 2rem;
+
   padding: 2rem 1.2rem;
 
   background: var(--color-nat-100);
+
   border: 1px solid var(--color-nat-300);
+
   border-radius: 24px;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
 
   text-align: center;
@@ -169,10 +174,13 @@
   border-radius: 50%;
 
   background: var(--color-primary-transparent);
+
   color: var(--color-alt);
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   font-size: 1.5rem;
@@ -182,7 +190,9 @@
   margin: 0 0 0.4rem;
 
   color: var(--color-alt);
+
   font-size: 1.05rem;
+
   font-weight: 700;
 }
 
@@ -194,18 +204,449 @@
   color: var(--color-alt-secondary);
 
   font-size: 0.78rem;
+
   line-height: 1.6;
 }
+
+/* =========================================================
+   BOTTOM NAVIGATION
+========================================================= */
+
+.bottom-nav {
+  position: static;
+
+  width: 100%;
+
+  height: 65px;
+
+  margin-top: auto;
+
+  flex-shrink: 0;
+
+  background-color: var(--color-secondary, #e8a87c);
+
+  border-radius: 25px 25px 0 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 2rem;
+
+  position: relative;
+
+  z-index: 20;
+}
+
+.nav-icon-btn {
+  background: none;
+
+  border: none;
+
+  color: white;
+
+  font-size: 1.3rem;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.nav-icon-circle {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  background-color: rgba(var(--color-primary-rgb, 232, 147, 91), 0.3);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.nav-icon-circle:hover {
+  transform: translateY(-2px);
+
+  background-color: rgba(255, 255, 255, 0.18);
+
+  color: white;
+}
+
+/* =========================================================
+   CART BUTTON
+========================================================= */
+
+.nav-cart-wrapper {
+  position: relative;
+
+  width: 60px;
+  height: 60px;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: -30px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.nav-cart-btn {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background-color: var(--color-alt);
+
+  color: white;
+
+  border: none;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nav-cart-btn:hover {
+  transform: scale(1.05);
+
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) {
+  .menu-page {
+    width: 100%;
+
+    max-width: none;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding-bottom: 0;
+
+    background-color: #ffffff;
+  }
+
+  /* -------------------------------------------------------
+     MAIN CONTENT
+  ------------------------------------------------------- */
+
+  .menu-page > .container {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 1.5rem 2rem !important;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+
+    margin: 2rem 0 1.3rem;
+  }
+
+  /* -------------------------------------------------------
+     CAROUSEL
+  ------------------------------------------------------- */
+
+  .carousel-page {
+    gap: 1.5rem;
+  }
+
+  /* -------------------------------------------------------
+     BOTTOM NAV
+  ------------------------------------------------------- */
+
+  .bottom-nav {
+    width: 100%;
+
+    height: 72px;
+
+    border-radius: 28px 28px 0 0;
+
+    padding: 0 max(3rem, calc((100vw - 1200px) / 2));
+
+    margin-top: auto;
+  }
+
+  .nav-icon-circle {
+    width: 46px;
+    height: 46px;
+  }
+
+  .nav-cart-wrapper {
+    width: 66px;
+    height: 66px;
+
+    margin-top: -33px;
+  }
+
+  .nav-cart-btn {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 992px) {
+  .menu-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  /* -------------------------------------------------------
+     MAIN CONTENT WIDTH
+  ------------------------------------------------------- */
+
+  .menu-page > .container {
+    max-width: 1280px;
+
+    padding: 1.5rem 3rem !important;
+  }
+
+  .section-title {
+    font-size: 2rem;
+
+    margin: 2rem 0 1.5rem;
+  }
+
+  /* -------------------------------------------------------
+     PRODUCTS
+  ------------------------------------------------------- */
+
+  .carousel-page {
+    gap: 1.5rem;
+  }
+
+  /* Product cards receive equal space */
+
+  /* -------------------------------------------------------
+     PAGINATION
+  ------------------------------------------------------- */
+
+  .pagination-dots {
+    margin: 2rem 0 2rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot.active {
+    width: 28px;
+  }
+
+  /* -------------------------------------------------------
+     BOTTOM NAV
+  ------------------------------------------------------- */
+
+  .bottom-nav {
+    height: 78px;
+
+    border-radius: 32px 32px 0 0;
+
+    padding: 0 max(4rem, calc((100vw - 1280px) / 2));
+
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-icon-circle {
+    width: 50px;
+    height: 50px;
+
+    font-size: 1.15rem;
+  }
+
+  .nav-cart-wrapper {
+    width: 72px;
+    height: 72px;
+
+    margin-top: -36px;
+  }
+
+  .nav-cart-btn {
+    width: 56px;
+    height: 56px;
+
+    font-size: 1.15rem;
+  }
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+  .menu-page > .container {
+    max-width: 1400px;
+
+    padding: 1.5rem 4rem !important;
+  }
+
+  .section-title {
+    font-size: 2.1rem;
+  }
+
+  .carousel-page {
+    gap: 2rem;
+  }
+
+  .bottom-nav {
+    height: 82px;
+
+    border-radius: 35px 35px 0 0;
+
+    padding: 0 max(5rem, calc((100vw - 1400px) / 2));
+  }
+
+  .nav-icon-circle {
+    width: 52px;
+    height: 52px;
+  }
+
+  .nav-cart-wrapper {
+    width: 76px;
+    height: 76px;
+
+    margin-top: -38px;
+  }
+
+  .nav-cart-btn {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* =========================================================
+   EXTRA LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+  .menu-page > .container {
+    max-width: 1500px;
+
+    padding: 2rem 5rem !important;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+
+    margin: 2.2rem 0 1.7rem;
+  }
+
+  .carousel-page {
+    gap: 2.5rem;
+  }
+
+  .bottom-nav {
+    height: 86px;
+
+    border-radius: 38px 38px 0 0;
+  }
+
+  .nav-icon-circle {
+    width: 54px;
+    height: 54px;
+  }
+
+  .nav-cart-wrapper {
+    width: 80px;
+    height: 80px;
+
+    margin-top: -40px;
+  }
+
+  .nav-cart-btn {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .menu-page {
+    width: 100%;
+
+    max-width: 420px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .carousel-page {
+    gap: 1rem;
+  }
+
+  .bottom-nav {
+    height: 65px;
+
+    padding: 0 2rem;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 420px) {
   .products-empty-state {
     min-height: 165px;
+
     padding: 1.5rem 1rem;
   }
 
   .products-empty-icon {
     width: 54px;
     height: 54px;
+
     font-size: 1.3rem;
   }
 
@@ -215,5 +656,36 @@
 
   .products-empty-state p {
     font-size: 0.72rem;
+  }
+
+  .bottom-nav {
+    padding: 0 1.5rem;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+  .bottom-nav {
+    padding: 0 1rem;
+  }
+
+  .nav-icon-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-cart-wrapper {
+    width: 56px;
+    height: 56px;
+
+    margin-top: -28px;
+  }
+
+  .nav-cart-btn {
+    width: 45px;
+    height: 45px;
   }
 }

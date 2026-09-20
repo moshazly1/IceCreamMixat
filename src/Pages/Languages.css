@@ -1,11 +1,21 @@
+/* =========================
+   LANGUAGES PAGE
+========================= */
+
 .languages-page {
+  width: 100%;
   min-height: 100vh;
   background: var(--color-nat-100);
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
 .languages-header {
+  width: 100%;
   height: 55px;
 
   display: flex;
@@ -25,11 +35,14 @@
   color: white;
 }
 
-/* ================= CONTENT ================= */
+/* =========================
+   CONTENT
+========================= */
 
 .languages-content {
   width: 100%;
   max-width: 600px;
+
   min-height: calc(100vh - 55px);
 
   margin: 0 auto;
@@ -37,7 +50,9 @@
   background: white;
 }
 
-/* ================= TOP ================= */
+/* =========================
+   TOP
+========================= */
 
 .languages-top {
   display: flex;
@@ -50,7 +65,9 @@
   border-bottom: 1px solid var(--color-nat-200);
 }
 
-/* ================= BACK BUTTON ================= */
+/* =========================
+   BACK BUTTON
+========================= */
 
 .languages-back-btn {
   width: 36px;
@@ -74,14 +91,23 @@
 
   cursor: pointer;
 
-  transition: 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    opacity 0.2s ease;
 }
 
 .languages-back-btn:hover {
   background: var(--color-primary);
 }
 
-/* ================= TITLE ================= */
+.languages-back-btn:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   TITLE
+========================= */
 
 .languages-top h2 {
   flex: 1;
@@ -98,13 +124,17 @@
   color: var(--color-nat-600);
 }
 
-/* ================= LANGUAGE LIST ================= */
+/* =========================
+   LANGUAGE LIST
+========================= */
 
 .languages-list {
   width: 100%;
 }
 
-/* ================= LANGUAGE ITEM ================= */
+/* =========================
+   LANGUAGE ITEM
+========================= */
 
 .language-item {
   width: 100%;
@@ -124,7 +154,9 @@
 
   cursor: pointer;
 
-  transition: all 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    padding 0.2s ease;
 }
 
 .language-item:hover {
@@ -135,7 +167,9 @@
   background: var(--color-primary-transparent);
 }
 
-/* ================= LANGUAGE INFO ================= */
+/* =========================
+   LANGUAGE INFO
+========================= */
 
 .language-info {
   display: flex;
@@ -149,33 +183,271 @@
   color: var(--color-nat-600);
 }
 
+/* =========================
+   LANGUAGE FLAG
+========================= */
+
 .language-flag {
   width: 34px;
   height: 34px;
+
+  flex-shrink: 0;
+
+  object-fit: contain;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   font-size: 29px;
-
   line-height: 1;
 }
 
-/* ================= SELECTED ================= */
+/* =========================
+   SELECTED
+========================= */
 
 .language-selected {
   width: 25px;
   height: 25px;
+
+  flex-shrink: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: white;
+
   background: var(--color-primary);
+
   border-radius: 50%;
+
   font-size: 14px;
 }
-/* ================= MOBILE ================= */
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .languages-header {
+    height: 60px;
+    padding: 0 24px;
+  }
+
+  .languages-header h1 {
+    font-size: 21px;
+  }
+
+  .languages-content {
+    max-width: 760px;
+    min-height: calc(100vh - 60px);
+  }
+
+  .languages-top {
+    min-height: 74px;
+    padding: 12px 24px;
+  }
+
+  .languages-top h2 {
+    font-size: 19px;
+    padding-right: 36px;
+  }
+
+  .languages-back-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .language-item {
+    min-height: 74px;
+    padding: 0 26px;
+  }
+
+  .language-info {
+    gap: 16px;
+    font-size: 16px;
+  }
+
+  .language-flag {
+    width: 36px;
+    height: 36px;
+  }
+
+  .language-selected {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+}
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 1024px) {
+  .languages-header {
+    height: 68px;
+    padding: 0 30px;
+  }
+
+  .languages-header h1 {
+    font-size: 22px;
+  }
+
+  .languages-content {
+    max-width: 1000px;
+    min-height: calc(100vh - 68px);
+  }
+
+  .languages-top {
+    min-height: 78px;
+    padding: 14px 30px;
+  }
+
+  .languages-top h2 {
+    font-size: 20px;
+    padding-right: 38px;
+  }
+
+  .languages-back-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .language-item {
+    min-height: 78px;
+    padding: 0 32px;
+  }
+
+  .language-item:hover {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
+  .language-info {
+    gap: 18px;
+    font-size: 17px;
+  }
+
+  .language-flag {
+    width: 40px;
+    height: 40px;
+  }
+
+  .language-selected {
+    width: 27px;
+    height: 27px;
+    font-size: 15px;
+  }
+}
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1200px) {
+  .languages-header {
+    height: 72px;
+    padding: 0 36px;
+  }
+
+  .languages-header h1 {
+    font-size: 23px;
+  }
+
+  .languages-content {
+    max-width: 1100px;
+    min-height: calc(100vh - 72px);
+  }
+
+  .languages-top {
+    min-height: 82px;
+    padding: 15px 36px;
+  }
+
+  .languages-top h2 {
+    font-size: 21px;
+  }
+
+  .languages-back-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .language-item {
+    min-height: 82px;
+    padding: 0 38px;
+  }
+
+  .language-info {
+    gap: 20px;
+    font-size: 18px;
+  }
+
+  .language-flag {
+    width: 42px;
+    height: 42px;
+  }
+
+  .language-selected {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* =====================================================
+   EXTRA LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1600px) {
+  .languages-content {
+    max-width: 1200px;
+  }
+
+  .languages-header {
+    height: 76px;
+  }
+
+  .languages-header h1 {
+    font-size: 24px;
+  }
+
+  .languages-top {
+    min-height: 86px;
+  }
+
+  .languages-top h2 {
+    font-size: 22px;
+  }
+
+  .language-item {
+    min-height: 86px;
+    padding: 0 42px;
+  }
+
+  .language-info {
+    font-size: 19px;
+  }
+
+  .language-flag {
+    width: 44px;
+    height: 44px;
+  }
+
+  .language-selected {
+    width: 29px;
+    height: 29px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media (max-width: 600px) {
   .languages-header {
     height: 50px;
@@ -187,6 +459,7 @@
   }
 
   .languages-content {
+    max-width: none;
     min-height: calc(100vh - 50px);
   }
 
@@ -226,5 +499,49 @@
     width: 24px;
     height: 24px;
     font-size: 13px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+  .languages-header {
+    padding: 0 12px;
+  }
+
+  .languages-header h1 {
+    font-size: 17px;
+  }
+
+  .languages-top {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .languages-top h2 {
+    font-size: 15px;
+  }
+
+  .language-item {
+    min-height: 64px;
+    padding: 0 12px;
+  }
+
+  .language-info {
+    gap: 11px;
+    font-size: 14px;
+  }
+
+  .language-flag {
+    width: 32px;
+    height: 32px;
+  }
+
+  .language-selected {
+    width: 23px;
+    height: 23px;
+    font-size: 12px;
   }
 }

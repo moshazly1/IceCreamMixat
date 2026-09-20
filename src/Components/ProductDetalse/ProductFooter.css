@@ -1,54 +1,273 @@
+/* =========================================================
+   PRODUCT FOOTER
+========================================================= */
+
 .product-footer {
   position: fixed;
+
   bottom: 0;
   left: 0;
   right: 0;
+
+  width: 100%;
   max-width: 420px;
+
   margin: 0 auto;
+
   background-color: var(--color-primary, #e8935b);
+
   border-radius: 25px 25px 0 0;
+
   padding: 1rem 1.5rem;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
+  gap: 15px;
+
   z-index: 100;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 -4px 18px rgba(123, 80, 54, 0.08);
 }
+
+/* =========================================================
+   PRICE
+========================================================= */
 
 .footer-price {
   color: white;
+
   font-weight: 700;
+
   font-size: 1.4rem;
+
+  white-space: nowrap;
 }
 
+/* =========================================================
+   ADD TO BASKET
+========================================================= */
+
 .add-basket-btn {
+  flex-shrink: 0;
+
   background-color: var(--color-alt, #7b5036);
+
   color: white;
+
   border: none;
+
   border-radius: 50px;
-  padding: 0.5rem 1rem;
+
+  padding: 0.55rem 1.1rem;
+
   font-weight: 700;
+
   font-size: 0.95rem;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   max-width: 200px;
+
   margin-left: 1rem;
+
+  cursor: pointer;
+
   box-shadow:
     0 6px 0 rgba(123, 80, 54, 0.6),
     0 8px 15px rgba(123, 80, 54, 0.4);
+
   transition:
     transform 0.1s ease,
-    box-shadow 0.1s ease;
+    box-shadow 0.1s ease,
+    background-color 0.2s ease;
+}
+
+.add-basket-btn:hover {
+  background-color: var(--color-alt-secondary, #9a6d51);
 }
 
 .add-basket-btn:active {
   transform: translateY(4px);
+
   box-shadow:
     0 2px 0 rgba(123, 80, 54, 0.6),
     0 4px 8px rgba(123, 80, 54, 0.4);
 }
 
 .add-basket-btn i {
-  font-size: 1.2rem; /* تكبير الأيقونة */
+  font-size: 1.2rem;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) {
+  .product-footer {
+    max-width: 900px;
+
+    padding: 1rem 2rem;
+
+    border-radius: 25px 25px 0 0;
+  }
+
+  .footer-price {
+    font-size: 1.5rem;
+  }
+
+  .add-basket-btn {
+    padding: 0.65rem 1.4rem;
+
+    font-size: 1rem;
+
+    max-width: 230px;
+  }
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1024px) {
+  .product-footer {
+    max-width: 1200px;
+
+    padding: 1rem 2.5rem;
+
+    border-radius: 28px 28px 0 0;
+  }
+
+  .footer-price {
+    font-size: 1.6rem;
+  }
+
+  .add-basket-btn {
+    padding: 0.7rem 1.6rem;
+
+    font-size: 1rem;
+
+    min-width: 210px;
+
+    max-width: 260px;
+  }
+
+  .add-basket-btn i {
+    font-size: 1.25rem;
+  }
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+  .product-footer {
+    max-width: 1350px;
+
+    padding: 1.1rem 3rem;
+
+    border-radius: 30px 30px 0 0;
+  }
+
+  .footer-price {
+    font-size: 1.7rem;
+  }
+
+  .add-basket-btn {
+    min-width: 230px;
+
+    padding: 0.75rem 1.8rem;
+
+    font-size: 1.05rem;
+  }
+}
+
+/* =========================================================
+   EXTRA LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+  .product-footer {
+    max-width: 1500px;
+
+    padding: 1.2rem 3.5rem;
+
+    border-radius: 32px 32px 0 0;
+  }
+
+  .footer-price {
+    font-size: 1.8rem;
+  }
+
+  .add-basket-btn {
+    min-width: 250px;
+
+    padding: 0.8rem 2rem;
+
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .product-footer {
+    padding: 0.9rem 1rem;
+
+    gap: 10px;
+  }
+
+  .footer-price {
+    font-size: 1.2rem;
+  }
+
+  .add-basket-btn {
+    padding: 0.5rem 0.8rem;
+
+    font-size: 0.85rem;
+
+    margin-left: 0.5rem;
+  }
+
+  .add-basket-btn i {
+    font-size: 1rem;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+  .product-footer {
+    padding: 0.8rem 0.8rem;
+  }
+
+  .footer-price {
+    font-size: 1.05rem;
+  }
+
+  .add-basket-btn {
+    padding: 0.45rem 0.7rem;
+
+    font-size: 0.78rem;
+
+    margin-left: 0.3rem;
+  }
+
+  .add-basket-btn i {
+    font-size: 0.95rem;
+  }
 }

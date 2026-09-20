@@ -1,15 +1,29 @@
+/* =========================
+   CURRENCY PAGE
+========================= */
+
 .currency-page {
+  width: 100%;
   min-height: 100vh;
   background-color: #fff;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
+
 .currency-header {
+  width: 100%;
   height: 60px;
+
   border-bottom: 1px solid #eeeeee;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   position: relative;
 }
 
@@ -20,46 +34,91 @@
   margin: 0;
 }
 
+/* =========================
+   BACK BUTTON
+========================= */
+
 .currency-back-btn {
   position: absolute;
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
+
   width: 30px;
   height: 30px;
+
   border: none;
   border-radius: 50%;
+
   background-color: var(--color-alt);
   color: white;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 0;
   cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.currency-back-btn:hover {
+  opacity: 0.9;
+}
+
+.currency-back-btn:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
 .currency-back-btn i {
   font-size: 14px;
 }
 
-/* Currency List */
+/* =========================
+   CURRENCY LIST
+========================= */
+
 .currency-list {
   width: 100%;
 }
 
+/* =========================
+   CURRENCY ITEM
+========================= */
+
 .currency-item {
   width: 100%;
   min-height: 55px;
+
   padding: 8px 14px;
+
   background: white;
+
   border: none;
   border-bottom: 1px solid #eeeeee;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   cursor: pointer;
   text-align: left;
+
+  transition:
+    background-color 0.15s ease,
+    padding 0.2s ease;
 }
+
+.currency-item:hover {
+  background-color: #fafafa;
+}
+
+/* =========================
+   CURRENCY INFO
+========================= */
 
 .currency-info {
   display: flex;
@@ -73,22 +132,309 @@
   color: #212121;
 }
 
-/* Currency Icon */
+/* =========================
+   CURRENCY ICON
+========================= */
+
 .currency-icon {
   width: 30px;
   height: 30px;
+
+  flex-shrink: 0;
+
   border-radius: 50%;
+
   background-color: #141414;
   color: white;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 18px;
   font-weight: 700;
 }
 
-/* Selected */
+/* =========================
+   SELECTED
+========================= */
+
 .currency-selected {
   color: var(--color-primary);
   font-size: 17px;
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .currency-page {
+    max-width: 700px;
+    min-height: 100vh;
+  }
+
+  .currency-header {
+    height: 64px;
+  }
+
+  .currency-header h1 {
+    font-size: 18px;
+  }
+
+  .currency-back-btn {
+    left: 20px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .currency-back-btn i {
+    font-size: 15px;
+  }
+
+  .currency-item {
+    min-height: 60px;
+    padding: 10px 20px;
+  }
+
+  .currency-info {
+    gap: 14px;
+  }
+
+  .currency-info span {
+    font-size: 14px;
+  }
+
+  .currency-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 19px;
+  }
+
+  .currency-selected {
+    font-size: 18px;
+  }
+}
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 1024px) {
+  .currency-page {
+    max-width: 1000px;
+    min-height: 100vh;
+  }
+
+  .currency-header {
+    height: 70px;
+  }
+
+  .currency-header h1 {
+    font-size: 20px;
+  }
+
+  .currency-back-btn {
+    left: 24px;
+
+    width: 38px;
+    height: 38px;
+  }
+
+  .currency-back-btn i {
+    font-size: 16px;
+  }
+
+  .currency-item {
+    min-height: 68px;
+
+    padding: 12px 28px;
+
+    transition:
+      background-color 0.2s ease,
+      padding 0.2s ease;
+  }
+
+  .currency-item:hover {
+    background-color: #fafafa;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .currency-info {
+    gap: 16px;
+  }
+
+  .currency-info span {
+    font-size: 15px;
+  }
+
+  .currency-icon {
+    width: 38px;
+    height: 38px;
+
+    font-size: 20px;
+  }
+
+  .currency-selected {
+    font-size: 19px;
+  }
+}
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1200px) {
+  .currency-page {
+    max-width: 1100px;
+  }
+
+  .currency-header {
+    height: 72px;
+  }
+
+  .currency-header h1 {
+    font-size: 21px;
+  }
+
+  .currency-back-btn {
+    left: 28px;
+
+    width: 40px;
+    height: 40px;
+  }
+
+  .currency-item {
+    min-height: 72px;
+    padding: 14px 32px;
+  }
+
+  .currency-info {
+    gap: 18px;
+  }
+
+  .currency-info span {
+    font-size: 16px;
+  }
+
+  .currency-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 21px;
+  }
+
+  .currency-selected {
+    font-size: 20px;
+  }
+}
+
+/* =====================================================
+   EXTRA LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1600px) {
+  .currency-page {
+    max-width: 1200px;
+  }
+
+  .currency-header {
+    height: 76px;
+  }
+
+  .currency-header h1 {
+    font-size: 22px;
+  }
+
+  .currency-item {
+    min-height: 76px;
+    padding: 15px 36px;
+  }
+
+  .currency-info span {
+    font-size: 17px;
+  }
+
+  .currency-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+  .currency-header {
+    height: 60px;
+  }
+
+  .currency-header h1 {
+    font-size: 17px;
+  }
+
+  .currency-back-btn {
+    left: 12px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .currency-item {
+    min-height: 55px;
+    padding: 8px 14px;
+  }
+
+  .currency-info {
+    gap: 12px;
+  }
+
+  .currency-info span {
+    font-size: 13px;
+  }
+
+  .currency-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .currency-selected {
+    font-size: 17px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+  .currency-header h1 {
+    font-size: 16px;
+  }
+
+  .currency-item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .currency-info {
+    gap: 10px;
+  }
+
+  .currency-info span {
+    font-size: 12px;
+  }
+
+  .currency-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 17px;
+  }
+
+  .currency-selected {
+    font-size: 16px;
+  }
 }

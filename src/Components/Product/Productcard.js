@@ -10,6 +10,7 @@ export default function ProductCard({ id, image, price, name }) {
   return (
     <div className="product-card">
       {/* Product information */}
+
       <div className="product-data">
         <button
           type="button"
@@ -30,6 +31,7 @@ export default function ProductCard({ id, image, price, name }) {
       </div>
 
       {/* Product image */}
+
       <div className="product-image-wrapper">
         <img src={image} alt={name} className="product-img" />
       </div>

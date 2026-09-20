@@ -1,15 +1,35 @@
+/* =========================================================
+   HOMEPAGE
+========================================================= */
+
 .hero-section {
-  max-width: 420px;
-  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
   padding: 2rem 0;
+
   overflow: hidden;
+
+  position: relative;
+
+  background: #ffffff;
 }
+
+/* =========================================================
+   BRAND
+========================================================= */
 
 .brand-logo {
   font-weight: 700;
   text-align: left;
+
   margin: 0 1rem 1.5rem 1rem;
 }
+
+/* =========================================================
+   HERO IMAGES
+========================================================= */
 
 .hero-images {
   margin: 0 -1rem 1.5rem -1rem;
@@ -23,8 +43,13 @@
 .hero-img-right {
   width: 90vw;
   max-width: 233px;
+
   margin-top: -4rem;
 }
+
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .hero-content {
   padding: 0 1rem;
@@ -32,42 +57,70 @@
 
 .hero-title {
   font-weight: 700;
+
   font-size: 1.6rem;
+
   margin-bottom: 0.5rem;
 }
 
 .hero-subtitle {
   color: #777;
+
   font-size: 0.9rem;
+
   margin-bottom: 1rem;
 }
 
 .hero-note {
   font-size: 0.75rem;
+
   margin-top: 1.5rem;
+
   text-align: center;
+
   line-height: 1.4;
 }
 
+/* =========================================================
+   BUTTON
+========================================================= */
+
 .hero-btn {
   background-color: var(--color-alt);
+
   color: var(--color-nat-100);
+
   border: none;
+
   border-radius: 50px;
+
   padding: 0.7rem 2.5rem;
+
   font-weight: 600;
+
   font-size: 1rem;
-  transition: filter 0.2s ease;
+
+  cursor: pointer;
+
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .hero-btn:hover {
   filter: brightness(0.9);
+
   color: var(--color-nat-100);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(123, 80, 54, 0.18);
 }
 
-/* ================================
+/* =========================================================
    HERO ANIMATIONS
-================================ */
+========================================================= */
 
 @keyframes slideInRight {
   from {
@@ -99,20 +152,24 @@
 
 .hero-img-left {
   opacity: 0;
+
   animation: slideInLeft 0.8s ease-out forwards;
+
   animation-delay: 0.8s;
 }
 
-/* ================================
+/* =========================================================
    ORDERS SHORTCUT
-================================ */
+========================================================= */
 
 .orders-shortcut-btn {
   width: 40px;
   height: 40px;
+
   border-radius: 50%;
 
   background-color: var(--color-alt);
+
   color: white;
 
   border: none;
@@ -124,4 +181,368 @@
   font-size: 1.1rem;
 
   flex-shrink: 0;
+}
+
+/* =========================================================
+   DESKTOP APPLICATION
+========================================================= */
+
+@media (min-width: 768px) {
+  .hero-section {
+    width: 100vw;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+
+    overflow: hidden;
+  }
+
+  /* =======================================================
+     BRAND
+  ======================================================= */
+
+  .hero-section > .d-flex:first-child {
+    position: absolute;
+
+    top: 32px;
+    left: 45px;
+    right: 45px;
+
+    z-index: 10;
+  }
+
+  .brand-logo {
+    margin: 0;
+
+    font-size: 1.5rem;
+  }
+
+  /* =======================================================
+     HERO IMAGES
+     DIRECTLY TOUCH SCREEN EDGES
+  ======================================================= */
+
+  .hero-images {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+  }
+
+  /* LEFT IMAGE */
+
+  .hero-img-left {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 32vw;
+
+    max-width: 470px;
+    min-width: 260px;
+
+    margin: 0;
+
+    object-fit: contain;
+    object-position: left bottom;
+  }
+
+  /* RIGHT IMAGE */
+
+  .hero-img-right {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 40vw;
+
+    max-width: 570px;
+    min-width: 320px;
+
+    margin: 0;
+
+    object-fit: contain;
+    object-position: right top;
+  }
+
+  /* =======================================================
+     CENTER CONTENT
+  ======================================================= */
+
+  .hero-content {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(650px, 42vw);
+
+    padding: 0;
+
+    margin: 0;
+
+    z-index: 5;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 3.2vw, 3.5rem);
+
+    line-height: 1.15;
+
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    max-width: 620px;
+
+    margin: 0 auto 1.8rem;
+
+    color: #777;
+
+    font-size: 1.05rem;
+
+    line-height: 1.6;
+  }
+
+  .hero-btn {
+    padding: 0.9rem 3.4rem;
+
+    font-size: 1.05rem;
+  }
+
+  .hero-note {
+    max-width: 600px;
+
+    margin: 1.8rem auto 0;
+
+    font-size: 0.82rem;
+
+    line-height: 1.6;
+  }
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+  .hero-section > .d-flex:first-child {
+    top: 35px;
+
+    left: 55px;
+    right: 55px;
+  }
+
+  .brand-logo {
+    font-size: 1.65rem;
+  }
+
+  /* LEFT */
+
+  .hero-img-left {
+    width: 34vw;
+
+    max-width: 520px;
+  }
+
+  /* RIGHT */
+
+  .hero-img-right {
+    width: 42vw;
+
+    max-width: 630px;
+  }
+
+  /* CENTER */
+
+  .hero-content {
+    width: min(720px, 43vw);
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 3.3vw, 3.7rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1.12rem;
+  }
+
+  .hero-note {
+    font-size: 0.88rem;
+  }
+}
+
+/* =========================================================
+   EXTRA LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+  .hero-section > .d-flex:first-child {
+    top: 40px;
+
+    left: 70px;
+    right: 70px;
+  }
+
+  .brand-logo {
+    font-size: 1.8rem;
+  }
+
+  /* LEFT IMAGE */
+
+  .hero-img-left {
+    width: 35vw;
+
+    max-width: 600px;
+  }
+
+  /* RIGHT IMAGE */
+
+  .hero-img-right {
+    width: 43vw;
+
+    max-width: 700px;
+  }
+
+  /* CENTER CONTENT */
+
+  .hero-content {
+    width: 750px;
+  }
+
+  .hero-title {
+    font-size: 3.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-btn {
+    padding: 1rem 3.8rem;
+
+    font-size: 1.1rem;
+  }
+
+  .hero-note {
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .hero-section {
+    width: 100%;
+
+    min-height: 100vh;
+
+    max-width: 420px;
+
+    margin: 0 auto;
+
+    padding: 2rem 0;
+
+    overflow: hidden;
+
+    position: relative;
+  }
+
+  /* BRAND */
+
+  .hero-section > .d-flex:first-child {
+    position: static;
+  }
+
+  .brand-logo {
+    margin: 0 1rem 1.5rem 1rem;
+
+    font-size: inherit;
+  }
+
+  /* IMAGES */
+
+  .hero-images {
+    position: static;
+
+    width: auto;
+    height: auto;
+
+    margin: 0 -1rem 1.5rem -1rem;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+  }
+
+  .hero-img-left {
+    position: static;
+
+    width: 46vw;
+
+    max-width: 180px;
+
+    min-width: 0;
+
+    margin: 0;
+  }
+
+  .hero-img-right {
+    position: static;
+
+    width: 90vw;
+
+    max-width: 233px;
+
+    min-width: 0;
+
+    margin-top: -4rem;
+  }
+
+  /* CONTENT */
+
+  .hero-content {
+    position: static;
+
+    transform: none;
+
+    width: auto;
+
+    padding: 0 1rem;
+
+    margin: 0;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-note {
+    font-size: 0.75rem;
+  }
 }

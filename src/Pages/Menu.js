@@ -11,7 +11,6 @@ import useLanguage from "../hooks/useLanguage";
 import useProductSearch from "../hooks/useProductSearch";
 import Loading from "../Components/common/Loading";
 
-const PRODUCTS_PER_PAGE = 2;
 const AUTO_SLIDE_INTERVAL = 20000;
 const SEARCH_DEBOUNCE = 500;
 
@@ -23,6 +22,21 @@ export default function Menu() {
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+
+  /*
+    Responsive products per page:
+    Mobile / Tablet = 2
+    Desktop = 3
+  */
+  const getProductsPerPage = () => {
+    if (typeof window === "undefined") {
+      return 2;
+    }
+
+    return window.innerWidth >= 992 ? 3 : 2;
+  };
+
+  const [productsPerPage, setProductsPerPage] = useState(getProductsPerPage());
 
   const {
     products: categoryProducts,
@@ -38,51 +52,124 @@ export default function Menu() {
     clearSearch,
   } = useProductSearch();
 
+  /* =========================================================
+     RESPONSIVE PRODUCTS COUNT
+  ========================================================= */
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newProductsPerPage = window.innerWidth >= 992 ? 3 : 2;
+
+      setProductsPerPage((prev) => {
+        if (prev !== newProductsPerPage) {
+          setCurrentPage(1);
+          return newProductsPerPage;
+        }
+
+        return prev;
+      });
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  /* =========================================================
+     DEFAULT CATEGORY
+  ========================================================= */
+
   useEffect(() => {
     if (categories.length > 0 && !selectedCategoryId) {
       setSelectedCategoryId(categories[0].id);
     }
   }, [categories, selectedCategoryId]);
 
+  /* =========================================================
+     SELECTED CATEGORY
+  ========================================================= */
+
   const selectedCategory = categories.find(
     (cat) => cat.id === selectedCategoryId,
   );
 
+  /* =========================================================
+     PRODUCTS SOURCE
+  ========================================================= */
+
   const isSearching = searchQuery.trim().length > 0;
 
   const products = isSearching ? searchProducts : categoryProducts;
+
   const loading = isSearching ? searchLoading : categoryLoading;
+
   const error = isSearching ? searchError : categoryError;
 
-  const totalPages = Math.ceil(products.length / PRODUCTS_PER_PAGE);
+  /* =========================================================
+     PAGINATION
+  ========================================================= */
+
+  const totalPages = Math.ceil(products.length / productsPerPage);
 
   const pages = Array.from({ length: totalPages }, (_, i) =>
-    products.slice(
-      i * PRODUCTS_PER_PAGE,
-      i * PRODUCTS_PER_PAGE + PRODUCTS_PER_PAGE,
-    ),
+    products.slice(i * productsPerPage, i * productsPerPage + productsPerPage),
   );
+
+  /* =========================================================
+     RESET PAGE
+  ========================================================= */
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchQuery]);
+  }, [searchQuery, selectedCategoryId, productsPerPage]);
+
+  /* =========================================================
+     SAFETY
+  ========================================================= */
 
   useEffect(() => {
-    if (totalPages <= 1) return;
+    if (totalPages > 0 && currentPage > totalPages) {
+      setCurrentPage(totalPages);
+    }
+  }, [currentPage, totalPages]);
+
+  /* =========================================================
+     AUTO SLIDE
+  ========================================================= */
+
+  useEffect(() => {
+    if (totalPages <= 1) {
+      return;
+    }
 
     const interval = setInterval(() => {
-      setCurrentPage((prev) => (prev === totalPages ? 1 : prev + 1));
+      setCurrentPage((prev) => (prev >= totalPages ? 1 : prev + 1));
     }, AUTO_SLIDE_INTERVAL);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [totalPages]);
+
+  /* =========================================================
+     CATEGORY
+  ========================================================= */
 
   const handleCategoryClick = (categoryId) => {
     setSelectedCategoryId(categoryId);
     setSearchQuery("");
     setCurrentPage(1);
+
     clearSearch();
   };
+
+  /* =========================================================
+     SEARCH
+  ========================================================= */
 
   const handleSearchChange = (value) => {
     setSearchQuery(value);
@@ -101,8 +188,14 @@ export default function Menu() {
       searchProductsApi(query);
     }, SEARCH_DEBOUNCE);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [searchQuery, searchProductsApi, clearSearch]);
+
+  /* =========================================================
+     RENDER
+  ========================================================= */
 
   return (
     <div className="menu-page">
@@ -117,19 +210,25 @@ export default function Menu() {
       <OfferSectio />
 
       <Container className="p-3">
+        {/* SECTION TITLE */}
+
         <h4 className="section-title">
           {isSearching ? t("searchResults") : selectedCategory?.name}
         </h4>
 
-        {/* Loading */}
+        {/* LOADING */}
+
         {loading && <Loading text={t("loading")} />}
 
-        {/* Error */}
+        {/* ERROR */}
+
         {error && (
           <p>
             {isSearching ? t("somethingWentWrong") : t("failedToLoadProducts")}
           </p>
         )}
+
+        {/* EMPTY */}
 
         {!loading && !error && products.length === 0 && (
           <div className="products-empty-state">
@@ -146,7 +245,9 @@ export default function Menu() {
             </p>
           </div>
         )}
-        {/* Products */}
+
+        {/* PRODUCTS */}
+
         {!loading && !error && products.length > 0 && (
           <div className="carousel-viewport">
             <div
@@ -156,7 +257,7 @@ export default function Menu() {
               }}
             >
               {pages.map((pageProducts, pageIndex) => (
-                <div className="carousel-page d-flex gap-3" key={pageIndex}>
+                <div className="carousel-page" key={pageIndex}>
                   {pageProducts.map((p) => (
                     <ProductCard
                       key={p.id}
@@ -172,19 +273,24 @@ export default function Menu() {
           </div>
         )}
 
-        {/* Pagination */}
+        {/* PAGINATION */}
+
         {!loading && !error && totalPages > 1 && (
-          <div className="pagination-dots d-flex justify-content-center gap-2 mt-3">
-            {Array.from({ length: totalPages }).map((_, index) => (
+          <div className="pagination-dots">
+            {Array.from({
+              length: totalPages,
+            }).map((_, index) => (
               <span
                 key={index}
                 className={`dot ${currentPage === index + 1 ? "active" : ""}`}
                 onClick={() => setCurrentPage(index + 1)}
-              ></span>
+              />
             ))}
           </div>
         )}
       </Container>
+
+      {/* BOTTOM NAV */}
 
       <div className="bottom-nav">
         <button
