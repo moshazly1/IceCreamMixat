@@ -7,9 +7,10 @@ import ProductCard from "../Components/Product/Productcard";
 import useProduct from "../hooks/useProduct";
 import useCategory from "../hooks/useCategory";
 import { useNavigate } from "react-router-dom";
-import useLanguage from "../hooks/useLanguage";
 import useProductSearch from "../hooks/useProductSearch";
 import Loading from "../Components/common/Loading";
+import PoliciesModal from "../Components/PoliciesModel/PoliciesModal";
+import useLanguage from "../hooks/useLanguage";
 
 const AUTO_SLIDE_INTERVAL = 20000;
 const SEARCH_DEBOUNCE = 500;
@@ -22,6 +23,7 @@ export default function Menu() {
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [showPolicies, setShowPolicies] = useState(false);
 
   /*
     Responsive products per page:
@@ -239,9 +241,7 @@ export default function Menu() {
             <h3>{t("noProductsFound")}</h3>
 
             <p>
-              {isSearching
-                ? "Try searching for another dessert."
-                : "There are no products available in this category yet."}
+              {isSearching ? t("tryAnotherSearch") : t("noProductsAvailable")}
             </p>
           </div>
         )}
@@ -290,31 +290,102 @@ export default function Menu() {
         )}
       </Container>
 
-      {/* BOTTOM NAV */}
+      {/* =====================================================
+          MENU FOOTER
+      ===================================================== */}
 
-      <div className="bottom-nav">
-        <button
-          className="nav-icon-btn nav-icon-circle"
-          onClick={() => navigate("/orders")}
-        >
-          <i className="bi bi-fork-knife fs-4"></i>
-        </button>
+      <footer className="menu-footer">
+        {/* TOP FOOTER BAR */}
 
-        <div className="nav-cart-wrapper">
-          <button className="nav-cart-btn" onClick={() => navigate("/basket")}>
-            <i className="bi bi-bag-fill fs-5"></i>
+        <div className="footer-top-bar">
+          {/* ORDERS */}
+
+          <button
+            type="button"
+            className="footer-action footer-action-left"
+            onClick={() => navigate("/orders")}
+            aria-label={t("footerOrders")}
+          >
+            <i className="bi bi-fork-knife"></i>
           </button>
+
+          {/* BASKET */}
+
+          <div className="footer-cart-wrapper">
+            <button
+              type="button"
+              className="footer-cart-btn"
+              onClick={() => navigate("/basket")}
+              aria-label={t("footerBasket")}
+            >
+              <i className="bi bi-bag-fill"></i>
+            </button>
+          </div>
+
+          {/* PHONE */}
+
+          <a
+            href="tel:01154450813"
+            className="footer-action footer-action-right"
+            aria-label={t("footerPhone")}
+          >
+            <i className="bi bi-telephone-fill"></i>
+          </a>
         </div>
 
-        <a
-          href="https://wa.me/01154450813"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="nav-icon-btn nav-icon-circle"
-        >
-          <i className="bi bi-telephone-fill fs-4"></i>
-        </a>
-      </div>
+        {/* FOOTER INFORMATION */}
+
+        <div className="footer-information">
+          <div className="footer-information-inner">
+            {/* POLICIES */}
+
+            <div className="footer-column footer-policies">
+              <h3>{t("footerPolicies")}</h3>
+
+              <button type="button" onClick={() => setShowPolicies(true)}>
+                {t("footerRefundShipping")}
+              </button>
+
+              <button type="button" onClick={() => setShowPolicies(true)}>
+                {t("footerPreparationCancellation")}
+              </button>
+
+              <button type="button" onClick={() => setShowPolicies(true)}>
+                {t("footerTerms")}
+              </button>
+            </div>
+
+            {/* CONTACT INFORMATION */}
+
+            <div className="footer-column footer-contact">
+              <h3>{t("footerContactInformation")}</h3>
+
+              <a href="tel:01154450813">
+                <span>{t("footerPhoneLabel")}</span>
+
+                <strong>01154450813</strong>
+              </a>
+
+              <a href="mailto:ahmed.aa0777@gmail.com">
+                <span>{t("footerEmailLabel")}</span>
+
+                <strong>ahmed.aa0777@gmail.com</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {/* =====================================================
+          POLICIES MODAL
+      ===================================================== */}
+
+      {showPolicies && (
+        <PoliciesModal
+          requireAcceptance={false}
+          onClose={() => setShowPolicies(false)}
+        />
+      )}
     </div>
   );
 }

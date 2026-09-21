@@ -29,6 +29,12 @@ const translations = {
     offOffer: "OFF Offer",
     failedToLoadProducts: "Failed to load products",
 
+    // Footer
+    footerPolicies: "Policies",
+    footerRefundShipping: "Refund & Shipping Policy",
+    footerPreparationCancellation: "Preparation & Cancellation Policy",
+    footerTerms: "Terms & Conditions",
+
     // Product Details
     pickFlavor: "Pick a flavor. Make it yours!",
     flavors: "Flavors",
@@ -159,7 +165,6 @@ const translations = {
       "For questions or complaints regarding orders, customers may contact us through the contact information provided on the website.",
 
     // Refund & Cancellation
-
     refundTitle: "Refund & Cancellation Policy",
 
     refundIntro:
@@ -200,7 +205,6 @@ const translations = {
       "No refunds will be issued for orders that have been correctly prepared and delivered simply because the customer changes their mind after receiving the product.",
 
     // Privacy
-
     privacyTitle: "Privacy Policy",
 
     privacyIntro:
@@ -262,7 +266,6 @@ const translations = {
       "If you have any questions regarding our Privacy Policy or your personal information, you may contact us through the contact information available on the website.",
 
     // Business
-
     businessTitle: "Business Information",
 
     businessAddressTitle: "Business Address",
@@ -270,13 +273,23 @@ const translations = {
     businessAddress: "Protel Lagoon Hotel, Sharm El Sheikh, South Sinai, Egypt",
 
     // Agreement
-
     policyAgreement:
       "I have read and agree to the Terms and Conditions, Refund & Cancellation Policy, and Privacy Policy.",
 
     accept: "Accept",
 
     close: "Close",
+    // Footer
+    footerPolicies: "Policies",
+    footerRefundShipping: "Refund & Shipping Policy",
+    footerPreparationCancellation: "Preparation & Cancellation Policy",
+    footerTerms: "Terms & Conditions",
+    footerContactInformation: "Contact Information",
+    footerPhoneLabel: "Phone",
+    footerEmailLabel: "Email",
+    footerOrders: "Orders",
+    footerBasket: "Basket",
+    footerPhone: "Call Us",
   },
 
   ru: {
@@ -308,6 +321,12 @@ const translations = {
     orderPreparation: "Приготовление заказа в течение 20 минут",
     offOffer: "СКИДКА",
     failedToLoadProducts: "Не удалось загрузить товары",
+
+    // Footer
+    footerPolicies: "Политики",
+    footerRefundShipping: "Политика возврата и доставки",
+    footerPreparationCancellation: "Политика подготовки и отмены",
+    footerTerms: "Условия и положения",
 
     // Product Details
     pickFlavor: "Выберите вкус. Сделайте его своим!",
@@ -547,6 +566,18 @@ const translations = {
     accept: "Принять",
 
     close: "Закрыть",
+
+    // Footer
+    footerPolicies: "Политики",
+    footerRefundShipping: "Политика возврата и доставки",
+    footerPreparationCancellation: "Политика подготовки и отмены",
+    footerTerms: "Условия и положения",
+    footerContactInformation: "Контактная информация",
+    footerPhoneLabel: "Телефон",
+    footerEmailLabel: "Электронная почта",
+    footerOrders: "Заказы",
+    footerBasket: "Корзина",
+    footerPhone: "Позвонить нам",
   },
 
   it: {
@@ -578,6 +609,12 @@ const translations = {
     orderPreparation: "Preparazione dell'ordine entro 20 minuti",
     offOffer: "SCONTO",
     failedToLoadProducts: "Impossibile caricare i prodotti",
+
+    // Footer
+    footerPolicies: "Politiche",
+    footerRefundShipping: "Politica di rimborso e consegna",
+    footerPreparationCancellation: "Politica di preparazione e annullamento",
+    footerTerms: "Termini e condizioni",
 
     // Product Details
     pickFlavor: "Scegli un gusto. Rendilo tuo!",
@@ -819,6 +856,18 @@ const translations = {
     accept: "Accetta",
 
     close: "Chiudi",
+
+    // Footer
+    footerPolicies: "Politiche",
+    footerRefundShipping: "Politica di rimborso e consegna",
+    footerPreparationCancellation: "Politica di preparazione e annullamento",
+    footerTerms: "Termini e condizioni",
+    footerContactInformation: "Informazioni di contatto",
+    footerPhoneLabel: "Telefono",
+    footerEmailLabel: "Email",
+    footerOrders: "Ordini",
+    footerBasket: "Carrello",
+    footerPhone: "Chiamaci",
   },
 
   pl: {
@@ -850,6 +899,12 @@ const translations = {
     orderPreparation: "Przygotowanie zamówienia w ciągu 20 minut",
     offOffer: "ZNIŻKA",
     failedToLoadProducts: "Nie udało się załadować produktów",
+
+    // Footer
+    footerPolicies: "Zasady",
+    footerRefundShipping: "Polityka zwrotów i dostawy",
+    footerPreparationCancellation: "Polityka przygotowania i anulowania",
+    footerTerms: "Regulamin",
 
     // Product Details
     pickFlavor: "Wybierz smak. Stwórz swój deser!",
@@ -1090,6 +1145,18 @@ const translations = {
     accept: "Akceptuj",
 
     close: "Zamknij",
+
+    // Footer
+    footerPolicies: "Zasady",
+    footerRefundShipping: "Polityka zwrotów i dostawy",
+    footerPreparationCancellation: "Polityka przygotowania i anulowania",
+    footerTerms: "Regulamin",
+    footerContactInformation: "Informacje kontaktowe",
+    footerPhoneLabel: "Telefon",
+    footerEmailLabel: "E-mail",
+    footerOrders: "Zamówienia",
+    footerBasket: "Koszyk",
+    footerPhone: "Zadzwoń do nas",
   },
 
   tr: {
@@ -1121,6 +1188,12 @@ const translations = {
     orderPreparation: "Sipariş 20 dakika içinde hazırlanır",
     offOffer: "İNDİRİM",
     failedToLoadProducts: "Ürünler yüklenemedi",
+
+    // Footer
+    footerPolicies: "Politikalar",
+    footerRefundShipping: "İade ve Teslimat Politikası",
+    footerPreparationCancellation: "Hazırlama ve İptal Politikası",
+    footerTerms: "Şartlar ve Koşullar",
 
     // Product Details
     pickFlavor: "Bir aroma seçin. Kendinize özel yapın!",
@@ -1360,6 +1433,18 @@ const translations = {
     accept: "Kabul Et",
 
     close: "Kapat",
+
+    // Footer
+    footerPolicies: "Politikalar",
+    footerRefundShipping: "İade ve Teslimat Politikası",
+    footerPreparationCancellation: "Hazırlama ve İptal Politikası",
+    footerTerms: "Şartlar ve Koşullar",
+    footerContactInformation: "İletişim Bilgileri",
+    footerPhoneLabel: "Telefon",
+    footerEmailLabel: "E-posta",
+    footerOrders: "Siparişler",
+    footerBasket: "Sepet",
+    footerPhone: "Bizi Ara",
   },
 };
 

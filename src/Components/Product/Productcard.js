@@ -8,7 +8,7 @@ export default function ProductCard({ id, image, price, name }) {
   const { currency, convertPrice, loading: currencyLoading } = useCurrency();
 
   return (
-    <div className="product-card">
+    <div className="product-card mb-3">
       {/* Product information */}
 
       <div className="product-data">
